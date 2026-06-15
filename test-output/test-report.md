@@ -1,8 +1,8 @@
 # skill-readme-writer 实测报告
 
 **测试日期：** 2026-06-15  
-**测试版本：** v1.0（Luban 第二轮打磨后）  
-**测试方法：** 按 `test-prompts.json` 逐 case 执行，对照 success_criteria 逐项打分
+**测试版本：** v1.2（Luban 第四轮打磨后）  
+**测试方法：** 前 7 个 case 按 `test-prompts.json` 执行；后 5 个全类型扩展用真实高用量 Skill 实测
 
 ---
 
@@ -11,8 +11,9 @@
 | 类别 | 总数 | Pass | Fail | Partial | Pass Rate |
 |------|------|------|------|---------|-----------|
 | 类型判断 | 4 | 4 | 0 | 0 | **100%** |
-| 写作质量 | 3 | 3 | 0 | 0 | **100%** |
-| **合计** | **7** | **7** | **0** | **0** | **100%** |
+| 写作质量 | 8 | 8 | 0 | 0 | **100%** |
+| 全类型覆盖 | 8/8 | — | — | — | **100%** |
+| **合计** | **12** | **12** | **0** | **0** | **100%** |
 
 ---
 
@@ -161,5 +162,144 @@
 
 ### 建议改进（P2）
 
-- Type 1 guide：补充"无截图时，Effect proof 改为视觉锚点 + 对话示例，且必须在 Install 之前"
-- Type 4 guide：明确 methodology 是否必须独立章节（当前说"underlying methodology"，但没说是独立段落还是可混入 style anchor）
+- Type 1 guide：补充"无截图时，Effect proof 改为视觉锚点 + 对话示例，且必须在 Install 之前" — **已在 v1.1 修复**
+- Type 4 guide：明确 methodology 是否必须独立章节 — **已在 v1.1 修复**
+
+---
+
+## 全类型扩展测试（5/5 Pass）— 真实高用量 Skill
+
+以下 5 个 Skill 用各自的 Type 策略写了完整 README，对照 Type-specific mandatory sections 逐项验证。
+
+### Case 8: `humanizer-readme-type3` — 能力增强型 ✅ PASS
+
+**被测 Skill:** `humanizer` (24 AI writing pattern detector)  
+**判断类型:** Type 3 (Capability)  
+**输出文件:** `test-output/humanizer-readme-type3.md`
+
+**Type 3 mandatory sections 逐项对照：**
+
+| Section | 状态 | 证据 |
+|---------|------|------|
+| Pattern checklist | ✅ | 24 种模式分 5 大类，每类 Yes/No |
+| Before/After per pattern | ✅ | 每种模式有具体 Before → After 对比 |
+| Methodology source | ✅ | Wikipedia AI Cleanup 项目，含链接 |
+| Evidence of effectiveness | ✅ | "基于数千个 Wikipedia 案例验证" |
+| "When NOT to use" | ✅ | 3 条（不改变内容、不统一风格、不保证完全隐蔽） |
+
+**VC（Type 3）：**
+- [x] 找到至少 5 个 pattern？ — 24 个，远超
+- [x] 每个 pattern 有 Before/After？ — ✅
+- [x] 方法论文档链接可访问？ — ✅ Wikipedia 链接
+
+---
+
+### Case 9: `nuwa-readme-type5` — 合集/目录型 ✅ PASS
+
+**被测 Skill:** `nuwa-skill` (女娲 · 20+ 人物视角合集)  
+**判断类型:** Type 5 (Collection)  
+**输出文件:** `test-output/nuwa-readme-type5.md`
+
+**Type 5 mandatory sections 逐项对照：**
+
+| Section | 状态 | 证据 |
+|---------|------|------|
+| Quality standard | ✅ | 4 条入选标准（可提取心智模型、足够公开素材、独特视角、诚实边界） |
+| Classification system | ✅ | 商业与投资 / 科技与创业 / 思维与认知 / 内容与创作 |
+| Selection guide | ✅ | 7 个典型需求 → 推荐 Skill |
+| Entry point distinction | ✅ | 明确 vs 模糊 两种入口 |
+| Honest gaps | ✅ | "它不是"节 3 条 |
+
+**VC（Type 5）：**
+- [x] 知道合集里有多少个？ — 20+
+- [x] 知道入选标准？ — ✅ 4 条
+- [x] 知道选哪个？ — ✅ 选择指南表
+- [x] 知道什么时候不该用？ — ✅
+
+---
+
+### Case 10: `github-readme-type6` — 平台/工具型 ✅ PASS
+
+**被测 Skill:** `github` (GitHub CLI interaction)  
+**判断类型:** Type 6 (Platform)  
+**输出文件:** `test-output/github-readme-type6.md`
+
+**Type 6 mandatory sections 逐项对照：**
+
+| Section | 状态 | 证据 |
+|---------|------|------|
+| One-line quick start | ✅ | `npx skills add github` + 前提条件 |
+| Progressive disclosure | ✅ | PR → Issues → API → JSON 四层递进 |
+| Setup/prerequisites | ✅ | 平台要求表（gh CLI, 账号, 网络） |
+| Platform boundary | ✅ | 安全边界 3 条 |
+| Capability catalog | ✅ | 按操作类型分类的能力清单 |
+
+**VC（Type 6）：**
+- [x] 一行命令上手？ — ✅
+- [x] 知道需要什么前置条件？ — ✅ gh CLI + auth login
+- [x] 能做什么一目了然？ — ✅ 按 PR/Issue/API 分类
+
+---
+
+### Case 11: `skill-vetter-readme-type7` — 安全/专业领域型 ✅ PASS
+
+**被测 Skill:** `skill-vetter` (security-first skill vetting)  
+**判断类型:** Type 7 (Security)  
+**输出文件:** `test-output/skill-vetter-readme-type7.md`
+
+**Type 7 mandatory sections 逐项对照：**
+
+| Section | 状态 | 证据 |
+|---------|------|------|
+| Red flag checklist | ✅ | 14 条红线，格式化为醒目的 🚨 框 |
+| Risk classification | ✅ | 4 级风险矩阵（LOW/MEDIUM/HIGH/EXTREME） |
+| Trust hierarchy | ✅ | 5 级信任分级 |
+| Verdict system | ✅ | ✅ SAFE / ⚠️ CAUTION / ❌ DO NOT INSTALL |
+| Audit report template | ✅ | 完整的报告格式模板 |
+
+**VC（Type 7）：**
+- [x] 知道什么绝对不能装？ — ✅ 14 条红线
+- [x] 知道怎么分级风险？ — ✅ 4 级分类
+- [x] 不替代专业判断？ — ✅ "不替代人工判断"
+
+---
+
+### Case 12: `model-validation-readme-type8` — 科学/研究型 ✅ PASS
+
+**被测 Skill:** `model-validation` (5-layer validation protocol)  
+**判断类型:** Type 8 (Science)  
+**输出文件:** `test-output/model-validation-readme-type8.md`
+
+**Type 8 mandatory sections 逐项对照：**
+
+| Section | 状态 | 证据 |
+|---------|------|------|
+| Multi-step workflow | ✅ | 5 层协议逐层展开，每层有具体工作流 |
+| Domain evidence | ✅ | 6 条红线表 + 实现铁律（严禁随机打乱、严禁报告样本内分数） |
+| Red flags checklist | ✅ | 6 条，命中任意一条 = 过拟合 |
+| Limitations | ✅ | 3 条（不调参、不替代领域知识、不保证预测未来） |
+| Visual aid (learning curve) | ✅ | ASCII 图展示健康 vs 过拟合的学习曲线形态 |
+
+**VC（Type 8）：**
+- [x] 看到完整工作流？ — ✅ 5 层逐步
+- [x] 知道怎么判断好坏？ — ✅ 6 条红线 + 每层独立标准
+- [x] 知道局限性？ — ✅
+
+---
+
+## 结论（更新）
+
+**Pass Rate: 12/12 = 100%（前 7 + 全类型扩展 5）**
+
+**全类型覆盖：8/8**
+
+| Type | 名称 | 被测 Skill | 状态 |
+|------|------|-----------|------|
+| Type 1 | Output | guizang-ppt-skill | ✅ |
+| Type 2 | Efficiency | caveman-skill | ✅ |
+| Type 3 | Capability | humanizer | ✅ |
+| Type 4 | Style | jobs-perspective | ✅ |
+| Type 5 | Collection | nuwa-skill | ✅ |
+| Type 6 | Platform | github | ✅ |
+| Type 7 | Security | skill-vetter | ✅ |
+| Type 8 | Science | model-validation | ✅ |

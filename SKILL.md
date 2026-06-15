@@ -1,5 +1,6 @@
 ---
 name: skill-readme-writer
+version: "1.2"
 description: >
   Use when the user needs to write, improve, or review a README.md file for an Agent Skill.
   Triggers include "write a README for my skill", "improve my skill's README", "review this README",
