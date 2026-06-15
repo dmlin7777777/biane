@@ -1,0 +1,75 @@
+{
+  "name": "skill-readme-writer evaluation suite",
+  "version": "1.0",
+  "description": "Tests for type detection accuracy and README writing quality. Run after any SKILL.md change to verify no regression.",
+  "tests": [
+    {
+      "id": "type-detection-output-1",
+      "category": "type_detection",
+      "description": "Type 1 (Output): guizang-ppt-skill — browser-based PPT generator",
+      "skill_description": "这个skill可以生成横向翻页的网页PPT，支持WebGL背景、章节幕封、数据大字报、图片网格等模板。有瑞士国际主义和电子杂志两种风格。触发词是'做PPT'或'横向翻页PPT'。",
+      "expected_type": "Type 1 (Output Type / 作品产出型)",
+      "success_criteria": "Agent correctly identifies Type 1 and states the README should lead with screenshots, demos, and real conversation examples."
+    },
+    {
+      "id": "type-detection-efficiency-1",
+      "category": "type_detection",
+      "description": "Type 2 (Efficiency): diagnose-skill — structured debugging workflow",
+      "skill_description": "这个skill是一个结构化调试流程：复现问题 → 最小化 → 提出假设 → 打点验证 → 修复 → 回归测试。触发词是'diagnose'或'help me debug'。它不生成新文件，只是让调试过程更快更系统。",
+      "expected_type": "Type 2 (Efficiency Type / 提效/流程型)",
+      "success_criteria": "Agent correctly identifies Type 2 and states the README needs Before/After comparison and trust system."
+    },
+    {
+      "id": "type-detection-boundary",
+      "category": "type_detection",
+      "description": "Boundary case: skill with elements of both Output and Security — should trigger clarifying question",
+      "skill_description": "这个skill是一个代码安全扫描工具，可以扫描Python代码中的SQL注入漏洞，输出一份HTML安全报告。",
+      "expected_type": "Ambiguous (Agent should ask clarifying question, not force a type)",
+      "success_criteria": "Agent does NOT force a type. Instead asks: 'When people evaluate your skill, do they care more about the REPORT (screenshot approach), or the VULNERABILITIES found (trophy case approach)?' Then defaults to Type 2 if user is unsure."
+    },
+    {
+      "id": "type-detection-fallback",
+      "category": "type_detection",
+      "description": "Unclassifiable skill — should trigger failure mode 2",
+      "skill_description": "这个skill是一个很特别的东西：它可以让agent在回复中加入特定emoji表情，每个emoji代表一种情绪。比如🔥代表愤怒，❄️代表冷静，🌟代表灵感。但它不改变文字内容，只是加emoji。",
+      "expected_type": "Fallback (Agent should admit uncertainty, use Type 2 baseline, add fallback comment)",
+      "success_criteria": "Agent admits type is uncertain; uses conservative Type 2 baseline; adds fallback comment marker; tells user the README is basic."
+    },
+    {
+      "id": "writing-quality-efficiency-1",
+      "category": "writing_quality",
+      "description": "Write README for caveman-skill (Efficiency type) — verify core structure",
+      "skill_description": "caveman skill: reduces token usage by ~75% using minimalist communication. Trigger words: 'caveman mode', 'talk like caveman', 'less tokens', 'be brief'. Transforms verbose agent responses into ultra-concise versions while preserving technical precision.",
+      "expected_sections": ["Pain point hook", "Before/After comparison", "Install command in first screen area", "Trust system or limitations"],
+      "success_criteria": "README includes at least one concrete Before/After comparison (example: 200-word verbose response → 50-word caveman response with same meaning); install command visible without scrolling; at least one explicit limitation stated; Before/After uses real numbers, not percentages."
+    },
+    {
+      "id": "writing-quality-output-1",
+      "category": "writing_quality",
+      "description": "Write README for guizang-ppt-skill (Output type) — verify visual-first approach",
+      "skill_description": "guizang-ppt-skill: generates horizontal-scrolling web PPTs as single HTML files. Two styles: Swiss Internationalism (sans-serif, dot grid, IKB/lemon yellow/lemon green highlights) and E-ink Magazine (serif, fluid backgrounds, warm tones). Trigger: '做PPT', '生成演示文稿', '横向翻页PPT', 'make a presentation'.",
+      "expected_sections": ["Hook line", "Effect proof section (describes screenshot/gif layout)", "Install command", "Style variation preview (2+ styles mentioned)"],
+      "success_criteria": "README opens with effect proof, not text description; install command visible without scrolling; mentions both style variations; anti-patterns avoided (no 'describing output in text without showing it')."
+    },
+    {
+      "id": "writing-quality-style-1",
+      "category": "writing_quality",
+      "description": "Write README for a style-type skill — verify comparison examples",
+      "skill_description": "A skill that makes agents write like Steve Jobs. Built from Jobs' biography, Stanford speech, Lost Interview, keynote transcripts. Activation: '用乔布斯的视角', 'Jobs perspective', '乔布斯模式'. Core style traits: reality distortion, simplicity, showmanship.",
+      "expected_sections": ["Style anchor (one-line essence)", "3 comparison examples (same prompt, generic vs Jobs-style)", "Trigger words", "When NOT to use"],
+      "success_criteria": "README has exactly 3 comparison examples with same-input/different-output format; at least one example from tech/product domain; 'When NOT to use' section is explicit (not generic); trigger words listed before methodology."
+    }
+  ],
+  "evaluation_guide": {
+    "type_detection": {
+      "pass": "Agent correctly identifies the type on FIRST attempt, or asks clarifying question when ambiguous. Agent does NOT force-fit into wrong type.",
+      "fail": "Agent guesses wrong type without clarification, or fails to provide reasoning for type choice.",
+      "partial": "Agent identifies correct type but provides no reasoning or skips Step 1 verification with user."
+    },
+    "writing_quality": {
+      "pass": "All expected_sections present; success_criteria fully met; anti-patterns avoided; Verification Checklist would pass.",
+      "fail": "Missing 2+ expected_sections; install command buried; no Before/After or effect proof; anti-pattern detected.",
+      "partial": "Most sections present but one missing or insufficient; Verification Checklist would flag 1-2 items."
+    }
+  }
+}

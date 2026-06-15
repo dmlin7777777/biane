@@ -1,0 +1,10 @@
+# Baseline backups from Luban refinement
+.baseline_*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
