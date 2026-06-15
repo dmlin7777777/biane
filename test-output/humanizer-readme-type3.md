@@ -180,6 +180,30 @@ npx skills add humanizer
 
 ---
 
+## 真实对话示例
+
+```
+User: "帮我把这段文字去 AI 味：
+
+The new software update serves as a testament to the company's
+commitment to innovation. Moreover, it provides a seamless,
+intuitive, and powerful user experience, ensuring that users
+can accomplish their goals efficiently."
+
+Agent: "检测到 8 种 AI 写作模式：
+• 'serves as' → 回避 is/are 模式
+• 'Moreover' → AI 高频词汇
+• 三件套形容词 → 三件套强迫症
+• 'seamless, intuitive, and powerful' → em dash 滥用
+• 'ensuring that' → -ing 假深度句
+
+重写后：
+The software update adds batch processing, keyboard shortcuts,
+and offline mode. Early beta testers report faster task completion."
+```
+
+---
+
 ## 它不做什么
 
 - **不改变你的内容** — 只改表达方式，不改核心信息

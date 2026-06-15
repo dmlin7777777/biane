@@ -184,6 +184,7 @@ Minimum: License + skills.sh status. Recommended: GitHub stars + runtime badges 
 4. **What it delivers** — structured list of output formats, quality guarantees.
 5. **Honest limitations** — what it CANNOT produce, what it might get wrong.
 6. **Real examples** — at least 2, preferably 3-4, showing different styles/use cases.
+7. **Conversation example** — show at least 1 real User/Agent dialogue. The reader needs to see what it actually looks like to interact with this skill. Format: `User: "..." Agent: "..."`. This is NOT optional — Iron Law 3 mandates it for all types.
 
 ### Optional but powerful
 
@@ -230,6 +231,7 @@ If any answer is "no", the README is not done.
 5. **Quantitative proof** — real numbers from real usage. luban: "83,725 条回放、327 假 AI、15/20→4/20、806→523 卡". If no large-scale data, use specific case studies with measurable outcomes.
 6. **Trust system** — efficiency skills need trust more than any other type. If the skill makes decisions autonomously, explain the safeguards. Examples: baogong's "铡刀门 10 条", luban's "强制停手点".
 7. **Cost/limitations** — be honest about trade-offs. Does it consume more tokens? Require specific models? Have failure modes?
+8. **Conversation example** — show at least 1 real User/Agent dialogue. The reader needs to see the skill in action, not just trigger words. Format: `User: "trigger phrase" Agent: "[response demonstrating the improved behavior]"`. Iron Law 3 mandates this.
 
 ### Before/After forms (choose the right one)
 
@@ -289,6 +291,7 @@ If any answer is "no", the README is not done.
 4. **Coverage matrix** — if the skill covers multiple domains, show a table or visual of coverage. addyosmani's agent-skills uses a lifecycle diagram (Define → Plan → Build → Verify → Review → Ship).
 5. **Install + activation** — how to install AND how to know it's working.
 6. **Verification mechanism** — capability skills must prove they're working. "看起来正确" is never enough.
+7. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent detecting/transforming something the user sends. Format: `User: "[input with AI patterns]" Agent: "[output with patterns removed, annotated]"`. Iron Law 3 mandates this.
 
 ### Anti-patterns
 
@@ -327,6 +330,7 @@ If any answer is "no", the README is not done.
 3. **Trigger words** — exactly what phrases activate this style. Users need to know what to say to their agent.
 4. **Underlying methodology** — what sources, principles, or frameworks the style is built from. This builds credibility. Can be a standalone section or woven into the Style anchor paragraph. For small/single-source styles, weaving is fine; for multi-source distillations (>5 sources), use a standalone section.
 5. **When NOT to use** — style skills are easy to over-apply. Define the boundary.
+6. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent speaking in the style voice. Format: `User: "[question]" Agent: "[response in the style voice]"`. This is different from comparison examples — it's an interaction, not an output comparison. Iron Law 3 mandates this.
 
 ### What makes a good comparison example
 
@@ -370,6 +374,7 @@ If any answer is "no", the README is not done.
 3. **Categorized listing** — skills organized by domain/provider, not by tech stack. Each entry: `[org/repo](link) — one-line description of what it does and why it matters`.
 4. **Install guide for the ecosystem** — how to install skills from this collection. Link to platform/tool if applicable.
 5. **Contribution guide** — how to submit, what standards to meet.
+6. **Conversation example** — show at least 1 real User/Agent dialogue. Show how someone asks for a skill recommendation and how the agent navigates the collection. Format: `User: "I need X" Agent: "Based on your need, I recommend [skill] because [reason]."`. Iron Law 3 mandates this.
 
 ### What makes a good one-line description
 
@@ -420,6 +425,7 @@ If any answer is "no", the README is not done.
 3. **Core commands reference** — fast-scannable table of what you can do: install, list, search, remove, validate.
 4. **Compatibility statement** — which agents, runtimes, platforms are supported. This is a core trust point for platform tools.
 5. **Progressive disclosure** — quick start → common workflows → advanced features → create your own. Each section is progressively deeper. The reader self-selects their depth.
+6. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent using the tool to accomplish something. Format: `User: "check PR #55 CI status" Agent: "[reads gh CLI output and summarizes] → All checks passed. The failing step was in the test job — here's the log:` ... `"`. Iron Law 3 mandates this.
 
 ### Anti-patterns
 
@@ -454,6 +460,7 @@ If any answer is "no", the README is not done.
 3. **Verb-driven capability list** — use precise action verbs: Detect, Audit, Identify, Analyze, Prevent. Each verb maps to a concrete capability with a one-line explanation.
 4. **Domain-specific badge/endorsement** — if applicable: compliance badges, certification references, industry recognition.
 5. **Install + scope** — how to install AND what it will/won't touch. Security tools that "scan everything" scare users. Define the boundary precisely.
+6. **Conversation example** — show at least 1 real User/Agent dialogue. Show a real audit scenario from start to verdict. Format: `User: "audit this skill: [url]" Agent: "Scanning... [lists red flags found] → Verdict: ⚠️ CAUTION — 2 red flags. Here's the full audit report:"`. Iron Law 3 mandates this.
 
 ### Anti-patterns
 
@@ -490,6 +497,7 @@ If any answer is "no", the README is not done.
 4. **Install + domain activation** — how to install AND how to activate specific domain capabilities.
 5. **Social proof** — scientist count, citations, institutional affiliations. "160,000+ scientists" (K-Dense-AI) is powerful — it says "your peers are already using this."
 6. **Star history / growth** — academic adoption curves build credibility.
+7. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent running a validation protocol from start to result. Format: `User: "validate my prediction model" Agent: "Running 5-layer validation protocol... [Layer 1 results] → [Layer 2 results] → ... → Overall: model shows signs of overfitting in Layer 3. Here's the learning curve:"`. Iron Law 3 mandates this.
 
 ### Anti-patterns
 
@@ -523,6 +531,7 @@ If any answer is "no", the README is not done.
 | Quantitative proof | Variants count | Real numbers | Verification | N/A | Entry count | Compatibility | Verified findings | Scientist count |
 | Trust system | Limitations | Safeguards | Verification | Boundaries | Curation criteria | — | Domain badges | Star history |
 | Real examples | 3-4 demos | Case studies | Activation demo | Trigger words | — | Workflows | — | — |
+| Conversation example | Required | Required | Required | Required | Required | Required | Required | Required |
 
 ## Common Mistakes
 

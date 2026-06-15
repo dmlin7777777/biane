@@ -64,6 +64,25 @@ gh issue list --repo owner/repo --json number,title --jq '.[] | "\(.number): \(.
 
 ---
 
+## 真实对话示例
+
+```
+User: "PR #55 的 CI 挂了，帮我看看哪个 step 出问题了"
+
+Agent: "查到 PR #55 的 workflow run #8923：
+→ 状态：failure
+→ 失败的 step：'Run tests' (step 4 of 7)
+→ 错误信息：3 tests failed in auth.test.ts
+→ 日志摘要：
+    • test 'login with expired token' — AssertionError
+    • test 'refresh token flow' — timeout
+    • test 'logout cleanup' — AssertionError
+
+需要我帮你拉完整的失败日志吗？"
+```
+
+---
+
 ## 平台要求
 
 | 依赖 | 说明 |
