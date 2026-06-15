@@ -178,8 +178,8 @@ Minimum: License + skills.sh status. Recommended: GitHub stars + runtime badges 
 ### Mandatory sections (in order)
 
 1. **Hook line** — one sentence that captures the unique value. Can be storytelling (nuwa: "你想蒸馏的下一个员工，何必是同事"), direct (guizang: "横向翻页网页 PPT"), or emotional (colleague-skill: "You AI guys are traitors to the codebase").
-2. **Effect proof** — the most important section. Takes 40-60% of first screen. Full-width screenshots, real conversation examples, or GIF demos. NOT thumbnails, NOT descriptions of what it does.
-3. **Install + first use** — one command to install, one line to send to agent.
+2. **Effect proof** — the most important section. Takes 40-60% of first screen. Full-width screenshots, real conversation examples, or GIF demos. NOT thumbnails, NOT descriptions of what it does. **Must appear before Install command** — readers need to see the output BEFORE they decide to install. If screenshots are unavailable (text-only README), use visual anchor descriptions (e.g., "像 Monocle 杂志贴上了代码") + conversation examples.
+3. **Install + first use** — one command to install, one line to send to agent. Place AFTER Effect proof, not before.
 4. **What it delivers** — structured list of output formats, quality guarantees.
 5. **Honest limitations** — what it CANNOT produce, what it might get wrong.
 6. **Real examples** — at least 2, preferably 3-4, showing different styles/use cases.
@@ -324,7 +324,7 @@ If any answer is "no", the README is not done.
    - Style-specific output (right/after)
    - Brief annotation explaining what the style adds
 3. **Trigger words** — exactly what phrases activate this style. Users need to know what to say to their agent.
-4. **Underlying methodology** — what sources, principles, or frameworks the style is built from. This builds credibility.
+4. **Underlying methodology** — what sources, principles, or frameworks the style is built from. This builds credibility. Can be a standalone section or woven into the Style anchor paragraph. For small/single-source styles, weaving is fine; for multi-source distillations (>5 sources), use a standalone section.
 5. **When NOT to use** — style skills are easy to over-apply. Define the boundary.
 
 ### What makes a good comparison example
