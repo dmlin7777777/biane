@@ -1,6 +1,6 @@
 ---
 name: skill-readme-writer
-version: "1.2"
+version: "1.3"
 description: >
   Use when the user needs to write, improve, or review a README.md file for an Agent Skill.
   Triggers include "write a README for my skill", "improve my skill's README", "review this README",
@@ -109,7 +109,7 @@ When any failure mode triggers and can't be resolved in 2 rounds of interaction:
 - Append `<!-- WARNING: This README was written under fallback mode. Type could not be determined. -->` at the bottom.
 - Tell the user: "I've written a basic README. If you find examples of READMEs you like for similar skills, share them and I'll rewrite."
 
-## 7 Universal Iron Laws
+## 8 Universal Iron Laws
 
 These apply to ALL skill types. No exceptions.
 
@@ -166,9 +166,33 @@ The fastest way to differentiate is to name what you're attacking:
 
 Generic claims like "better quality" don't work. Specific attacks do.
 
-**7. Badge matrix is the cheapest social proof.**
+**7. Badges are the quickest social proof — but not the only one.**
 
-Minimum: License + skills.sh status. Recommended: GitHub stars + runtime badges + any third-party endorsement. They signal legitimacy in under 1 second.
+Badge matrix is the minimum: License + skills.sh status + GitHub stars + runtime badges. They signal legitimacy in under 1 second.
+
+But badges alone are thin. Layer deeper social proof when available:
+- **Usage evidence:** install counts, download numbers, "used by X teams/people"
+- **Testimonials:** real user quotes, not fabricated praise. Link to source.
+- **Third-party validation:** mentioned in newsletters, ranked in lists, recommended by known figures
+- **Methodology transparency:** when the skill is too new for usage data, the creator's process IS the social proof — show your research, your data, your sources
+
+Example: nuwa-skill's Star History chart → visual social proof that says "this isn't abandoned, it's growing." Its "入选标准" section → methodology transparency as social proof when there's no usage data yet.
+
+**8. Emotional connection opens the door that logic closes.**
+
+A feature list tells people what the skill does. An origin story tells them WHY you built it — and that's what makes them care.
+
+Elements:
+- **Origin story:** "I built this because [specific pain/frustration]. The existing options [specific gap]."
+- **Personal motivation:** not corporate "we're excited to announce" — real human voice. What made you spend weekends on this?
+- **Relatable pain point:** "If you've ever [common frustration], you know why this exists."
+
+Examples:
+- colleague-skill: "You AI guys are traitors to the codebase" → emotional hook that makes you feel the frustration before you even know what the skill does
+- nuwa-skill's backstory about distilling thinking patterns → personal mission, not feature pitch
+- baogong: "不是润色器。是求职教练。" → emotional positioning that says "I understand your real problem"
+
+Even a 2-sentence origin story beats 10 feature bullet points. Humans decide with emotion first, then justify with logic.
 
 ## Type 1: 作品产出型 (Output Type)
 
@@ -532,6 +556,8 @@ If any answer is "no", the README is not done.
 | Trust system | Limitations | Safeguards | Verification | Boundaries | Curation criteria | — | Domain badges | Star history |
 | Real examples | 3-4 demos | Case studies | Activation demo | Trigger words | — | Workflows | — | — |
 | Conversation example | Required | Required | Required | Required | Required | Required | Required | Required |
+| 社会证明 | Demo 数量 | 节省数字 | 检测模式数 | 使用者数量 | 收录数量 | 安装量/兼容性 | 审计案例 | 验证模型数 |
+| 情感连接 | 创造者故事 | 痛点共鸣 | "我总看到" | "我想像XX一样" | 筛选哲学 | "厌倦切换" | "我被坑过" | 研究动机 |
 
 ## Common Mistakes
 

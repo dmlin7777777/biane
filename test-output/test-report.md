@@ -1,7 +1,7 @@
 # skill-readme-writer 实测报告
 
 **测试日期：** 2026-06-15  
-**测试版本：** v1.2（Luban 第四轮打磨后）  
+**测试版本：** v1.3（社会证明 + 情感连接维度）  
 **测试方法：** 前 7 个 case 按 `test-prompts.json` 执行；后 5 个全类型扩展用真实高用量 Skill 实测
 
 ---
@@ -194,27 +194,32 @@
 
 ---
 
-### Case 9: `nuwa-readme-type5` — 合集/目录型 ✅ PASS
+### Case 9: `nuwa-readme-type1` — 作品产出型 ✅ PASS · ⚠️ 重新分类
 
-**被测 Skill:** `nuwa-skill` (女娲 · 20+ 人物视角合集)  
-**判断类型:** Type 5 (Collection)  
-**输出文件:** `test-output/nuwa-readme-type5.md`
+**被测 Skill:** `nuwa-skill` (女娲 · Skill 造人术)  
+**原始判断类型:** Type 5 (Collection) ❌  
+**修正类型:** Type 1 (Output) ✅  
+**修正原因:** nuwa-skill 本身是一个独立的 Skill，输入人名/主题，产出 perspective skill。perspectives 是它的**产品**，不是子合集。这就像一个工厂（Type 1），不是仓库（Type 5）。
+**输出文件:** `test-output/nuwa-readme-type5.md`（文件名保留，内容含 Type 1 特征）
 
-**Type 5 mandatory sections 逐项对照：**
+**Type 1 mandatory sections 逐项对照：**
 
 | Section | 状态 | 证据 |
 |---------|------|------|
-| Quality standard | ✅ | 4 条入选标准（可提取心智模型、足够公开素材、独特视角、诚实边界） |
-| Classification system | ✅ | 商业与投资 / 科技与创业 / 思维与认知 / 内容与创作 |
-| Selection guide | ✅ | 7 个典型需求 → 推荐 Skill |
-| Entry point distinction | ✅ | 明确 vs 模糊 两种入口 |
-| Honest gaps | ✅ | "它不是"节 3 条 |
+| Hook line (storytelling) | ✅ | "你想用芒格的方式思考投资…但没人帮你把这些思维框架变成可运行的 Agent Skill。" |
+| Effect proof | ✅ | 分类表格展示 20+ 产出物 + 每个视角的"最擅长"一句话 |
+| Install command | ✅ | `npx skills add nuwa` 在 hook 后第 3 行 |
+| What it delivers | ✅ | 分类表格 + 每个视角含 5-6 心智模型、7-9 决策启发式 |
+| Honest limitations | ✅ | "它不是"节 3 条 |
+| Conversation example | ✅ | User 描述需求 → Agent 推荐两个视角交叉分析 |
 
-**VC（Type 5）：**
-- [x] 知道合集里有多少个？ — 20+
-- [x] 知道入选标准？ — ✅ 4 条
-- [x] 知道选哪个？ — ✅ 选择指南表
-- [x] 知道什么时候不该用？ — ✅
+**⚠️ 备注:** 初判为 Type 5 是错的——把"产品多"误判为"合集"。nuwa 和它的 perspectives 的关系是工厂和产品的关系，不是目录和条目的关系。这在 SKILL.md 的 Iron Law 4 表格中就已经展示了：nuwa 被列为 Style 类型的对话示例标杆。此次修正将 SKILL.md 中的 type 引用对齐。**Type 5 覆盖出现缺口，需后续补充。**
+
+**VC（Type 1）：**
+- [x] 10 秒内知道产出什么？ — 是（"把一个人的思维操作系统蒸馏成可运行的 Skill"）
+- [x] 看到产出（而非仅读到）？ — 是（分类展示 20+ 视角，每个有具体"最擅长"）
+- [x] 知道怎么安装？ — 是（首屏可见）
+- [x] 能说出一个区别点？ — 是（"不是复制他说过的话，是提取他怎么想"）
 
 ---
 
@@ -295,11 +300,11 @@
 
 | Type | 名称 | 被测 Skill | 状态 |
 |------|------|-----------|------|
-| Type 1 | Output | guizang-ppt-skill | ✅ |
+| Type 1 | Output | guizang-ppt-skill, nuwa-skill | ✅✅ |
 | Type 2 | Efficiency | caveman-skill | ✅ |
 | Type 3 | Capability | humanizer | ✅ |
 | Type 4 | Style | jobs-perspective | ✅ |
-| Type 5 | Collection | nuwa-skill | ✅ |
+| Type 5 | Collection | — | ⚠️ 空缺（nuwa 重新分类后出现） |
 | Type 6 | Platform | github | ✅ |
 | Type 7 | Security | skill-vetter | ✅ |
 | Type 8 | Science | model-validation | ✅ |
