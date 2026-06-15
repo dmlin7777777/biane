@@ -64,6 +64,14 @@ Answers: "should I install?" in the first 10 seconds
 
 The user can judge whether the effect matches their intent, even if they can't judge the technical approach.
 
+**Cross-reference check (mandatory):** After completing the full draft, re-read the target skill's SKILL.md and verify:
+- Every feature/capability claimed in README exists in SKILL.md
+- Every number (pattern count, step count, coverage percentage) matches SKILL.md
+- Conversation examples show behavior consistent with SKILL.md instructions
+- No section implies capability that SKILL.md doesn't implement
+
+If a claim can't be traced back to SKILL.md, remove it or flag it to the user. Don't round up, don't extrapolate, don't "complete" what SKILL.md left unfinished. Agent 在总结时天然倾向"圆"出更完整的能力——这个检查就是拦这个的。
+
 ## Failure Modes & Fallback
 
 When things go wrong, do NOT continue silently. Follow these fallback rules.
