@@ -1,594 +1,392 @@
 ---
 name: skill-readme-writer
-version: "1.3"
+version: "2.0"
 description: >
-  Use when the user needs to write, improve, or review a README.md file for an Agent Skill.
-  Triggers include "write a README for my skill", "improve my skill's README", "review this README",
-  "帮我写 README", "优化 README", "怎么写 skill 的 README".
-  Covers 8 types: output (screenshots/demos), efficiency (Before/After comparisons), capability (pattern checklists),
-  style (generated text samples), collection (quality standards + categorization),
-  platform (one-command quickstart), security (trophy case + domain authority),
-  and science (multi-step workflow examples).
-  NOT for traditional project READMEs (use other tools for those).
+  Use when the user needs to write, improve, or review a README.md for an Agent Skill.
+  Triggers: "write a README for my skill", "improve my skill's README", "review this README",
+  "帮我写 README", "优化 README", "怎么写 skill 的 README", "README 不够好".
+  Covers 8 skill types, each requiring a different README strategy because each answers
+  a different human decision question.
+  NOT for traditional project READMEs (Install/Usage/Contributing) — those are a different format.
 ---
 
 # Skill README Writer
 
-## Overview
+Traditional project READMEs don't work for Agent Skills. A Skill README is a **sales page** — it answers "should I install this?" in 10 seconds. The SKILL.md handles the agent; the README handles the human.
 
-Skill READMEs are fundamentally different from traditional project READMEs. A Skill README is a **sales page for human readers** — it answers "should I install this?" in 10 seconds. The SKILL.md handles the agent; the README handles the human.
-
-**Core insight:** Different skill types need different README strategies. An output-type skill (eg. PPT generator) proves itself with screenshots; an efficiency-type skill (eg. debugger) proves itself with Before/After comparisons.
-
-This guide covers all 8 types identified through 22-sample research (7 original + 1 derived during analysis). Each type has a unique strategy because each answers a different human decision question.
+Different skill types need different proof. A PPT generator proves itself with screenshots; a debugger proves itself with Before/After comparison. This skill identifies the type first, then applies the matching strategy.
 
 ## Workflow
 
-Follow this 3-step flow for every README writing task. The type knowledge sections (Type 1-8 below) are loaded after step 2.
+### Step 1: Identify type
 
-### Step 1: Identify type (ask 1-2 questions)
-
-Ask the user what their skill does. Then state your type judgment in **plain language the user can verify**:
+Ask what the skill does. State your judgment in plain language the user can verify:
 
 ```
-Your skill produces [specific output] when triggered — that's Output Type.
-The README should lead with screenshots of the output.
-→ User can confirm: "yes, it produces PPT files" or "no, it's not that".
+"Your skill produces [specific output] — that's Output Type.
+ The README should lead with screenshots of the output."
+→ User confirms: "yes, it produces PPT files" or "no, it's not that"
 
-Your skill makes [process] faster/better — that's Efficiency Type.
-The README needs a Before/After comparison so people can see the difference.
-→ User can confirm: "yes, it saves time" or "no, it adds capability".
+"Your skill makes [process] faster/better — that's Efficiency Type.
+ The README needs a Before/After comparison."
+→ User confirms: "yes, it saves time" or "no, it adds capability"
 ```
 
-**Only confirm what the user can judge.** Do NOT ask "is this Type 3 or Type 7?" — the user doesn't know the taxonomy. Ask about their skill's behavior in plain language.
+Do NOT ask "is this Type 3?" — the user doesn't know the taxonomy. Ask about behavior.
 
-### Step 2: Load the type guide
+If unclear after 2 questions → default to Type 2 (Efficiency). Its Before/After + trust system is the most transferable baseline.
 
-Read the Type section in **this SKILL.md file** below. Find the corresponding `Type N:` heading (Type 1-8), then read that entire section. Each type guide has:
-- Core question + strategy
-- Mandatory sections (in order)
-- Anti-patterns to avoid
-- Benchmark examples to study
-- Verification Checklist at the end
+### Step 2: Load type card + identify the ONE proof
 
-**Type 5-8 boundary rule:** Types 5-8 (Collection, Platform, Security, Science) are for specialized skill categories. If the user's skill does NOT match one of these clearly (collection of skills, a platform/tool, a security scan tool, research workflows), default to Types 1-4. Do NOT force a skill into Type 5-8 just because types 1-4 don't fit neatly.
+Find the matching Type (1-8) below. Each card has a "ONE proof" line — this is the single element that will do 80% of the convincing. Before writing anything, identify what this proof IS for the user's skill:
+
+```
+"For your skill, the ONE proof is [specific thing].
+ If this lands, readers install. If it doesn't, nothing else saves it.
+ I'll build the README around this."
+```
+
+**Boundary rule:** Types 5-8 are specialized (collection, platform, security, science). If the skill doesn't clearly match, default to Types 1-4.
 
 ### Step 3: Draft + verify
 
-After drafting each major section, show a 2-line summary:
+After each major section, show a 2-line summary:
+
 ```
 Section: Hook + Before/After comparison
-Answers: "should I install?" in the first 10 seconds
-→ Does this section feel right to you?
+Answers: "should I install?" in 10 seconds
+→ Does this feel right?
 ```
 
-The user can judge whether the effect matches their intent, even if they can't judge the technical approach.
-
-**Cross-reference check (mandatory):** After completing the full draft, re-read the target skill's SKILL.md and verify:
-- Every feature/capability claimed in README exists in SKILL.md
-- Every number (pattern count, step count, coverage percentage) matches SKILL.md
+**Cross-reference check (mandatory after full draft):**
+Re-read the target skill's SKILL.md and verify:
+- Every claim in README traces to SKILL.md
+- Every number (pattern count, step count, percentage) matches SKILL.md
+- No section implies capability SKILL.md doesn't implement
 - Conversation examples show behavior consistent with SKILL.md instructions
-- No section implies capability that SKILL.md doesn't implement
 
-If a claim can't be traced back to SKILL.md, remove it or flag it to the user. Don't round up, don't extrapolate, don't "complete" what SKILL.md left unfinished. Agent 在总结时天然倾向"圆"出更完整的能力——这个检查就是拦这个的。
+If a claim can't be traced back, remove it or flag it. Don't round up, don't extrapolate. Agent 在总结时天然倾向"圆"出更完整的能力——这个检查就是拦这个的。
 
-## Failure Modes & Fallback
+## 8 Iron Laws
 
-When things go wrong, do NOT continue silently. Follow these fallback rules.
+All types, no exceptions.
 
-### Failure 1: Can't determine the type in 1 question
+| # | Law | How to check | Fail signal |
+|---|-----|-------------|-------------|
+| 1 | First screen answers "should I install?" | Hook + proof + install visible without scrolling | Feature list with no proof; install below the fold |
+| 2 | Install command in first scroll range | Copy-pasteable `npx skills add` or equivalent | Reader must scroll to find install |
+| 3 | Conversation example > code example | At least 1 `User: / Agent:` dialogue | `from skill import X; result = run()` |
+| 4 | Proof format matches type | See type card below | Screenshots for efficiency skill; text for output skill |
+| 5 | Honesty > hype | Specific limitations section exists | "Best tool ever" with no caveats |
+| 6 | Attack target named | Specific problem or competitor called out by name | "Better than traditional approaches" |
+| 7 | Social proof layered | Badges + at least one deeper signal | Badges only, or no proof at all |
+| 8 | Emotional connection present | Origin story, personal pain, or relatable frustration | Pure feature list with no human voice |
 
-**Symptom:** After asking 1 plain-language question, the user's answer is too vague to determine type.
-**Fallback:**
-1. Ask 1 more question, with more specific framing:
-   ```
-   "Let me try a different angle. When someone uses your skill, what do they SEE at the end?
-   A) A file or document (screenshots, PPT, HTML, PDF) → Output Type
-   B) The same task done faster/better (debugging, formatting, planning) → Efficiency Type
-   C) New behavior the agent couldn't do before (detection, transformation, analysis) → Capability Type
-   D) A different way of speaking or writing (style, tone, perspective) → Style Type"
-   ```
-2. If still unclear after 2 questions → **default to Type 2 (Efficiency) as conservative baseline**.
-   - Type 2's "Before/After comparison + Trust system" works reasonably for most skills.
-   - If the skill doesn't fit, the user will spot it during Step 3 verification and correct.
-3. **Record:** Note "type uncertain, defaulted to Type 2" so the user's feedback can improve future type detection.
-
-### Failure 2: Skill doesn't match any of the 8 types
-
-**Symptom:** The skill's domain is genuinely outside all 8 categories (e.g., a skill for teaching, medical diagnosis, legal reasoning).
-**Fallback:**
-1. State honestly: "Your skill doesn't map neatly to any of our 8 type categories. I'll use Type 2 (Efficiency) as a baseline since it has the most transferable sections: Before/After comparison, trust system, and limitations."
-2. Skip the Verification Checklist (it won't apply).
-3. Ask the user: "Does this skill type need special README treatment? If you found a similar skill's README you admired, share it and I'll adapt."
-
-### Failure 3: Type was judged incorrectly — user corrects mid-draft
-
-**Symptom:** During Step 3 verification, user says "no, it's not that type."
-**Fallback:**
-1. Stop drafting immediately.
-2. Ask the user to describe what the skill produces or improves in their own words.
-3. Restart from Step 2 with the new type.
-4. **Do NOT patch** — rewriting with the correct type strategy is faster than retrofitting the wrong structure.
-
-### Fallback for ALL failures
-
-When any failure mode triggers and can't be resolved in 2 rounds of interaction:
-- Write a conservative README with: hook line, install command, 1 example, 1 limitation.
-- Append `<!-- WARNING: This README was written under fallback mode. Type could not be determined. -->` at the bottom.
-- Tell the user: "I've written a basic README. If you find examples of READMEs you like for similar skills, share them and I'll rewrite."
-
-## 8 Universal Iron Laws
-
-These apply to ALL skill types. No exceptions.
-
-**1. Answer "should I install?" in the first 10 seconds.**
-
-First screen must contain: what it does + why it's different + install command. Do not bury the hook below a wall of text.
-
-**2. Install command must appear in the first scroll range.**
-
-`npx skills add <name>`, or equivalent. The reader must not scroll to install.
-
-**3. Conversation examples > code examples.**
-
-Show what the user says to their agent, not what code gets run. This is the unique differentiator of Skill READMEs vs traditional project READMEs.
-
+**Law 3 format reference:**
 ```
-# Good (conversation example)
 User: "审一下这份 JD — 腾讯微信事业群高级产品经理"
 Agent: "JD 解析完成。量化追问第 1 轮..."
-
-# Bad (code example)
-```python
-from skill import analyze_jd
-result = analyze_jd("job_description.pdf")
 ```
-```
+NOT: `from skill import analyze_jd; result = analyze_jd("job.pdf")`
 
-**4. Effect display format is determined by skill type.**
+**Law 7 deeper signals** (beyond badges): usage data, real testimonials with links, third-party validation, methodology transparency. When too new for usage data, the creator's research process IS the social proof.
 
-| Type | Display Format | Example |
-|------|---------------|---------|
-| Output | Screenshots, GIFs, real conversation | guizang full-width preview |
-| Efficiency | Before/After comparison, numbers, diffs | baogong diff + before/after image |
-| Capability | Pattern checklist, coverage matrix | humanizer 24 patterns |
-| Style | 3 generated text comparisons | nuwa dialogue examples |
-| Collection | Quality criteria + categorized tables | VoltAgent awesome list |
-| Platform | One-command quickstart + architecture | vercel-labs/skills |
-| Security | Trophy case + verb-driven descriptions | trailofbits/skills |
-| Science | Domain matrix + multi-step workflows | K-Dense-AI 6 workflows |
+**Law 8 elements:** "I built this because [pain]. The existing options [gap]." Even 2 sentences of origin story beat 10 feature bullets.
 
-**5. Honesty > hype.**
+## Universal Structure (all types)
 
-State limitations explicitly. Every top-performing README has a "limitations" section. Examples:
-- nuwa: "蒸馏不了直觉。捕捉不了突变。"
-- baogong: 铡刀门 10 条铁律 + 三色签标注
-- luban: "强制停手点" + "你的疑问句不构成授权"
+Before any type-specific section, every README starts with:
 
-**6. Name your attack anchor explicitly.**
+1. **Title + badge row** — skill name as H1, then badges (version, license, stars if applicable). Badges = first social proof signal (Iron Law 7)
+2. **One-line positioning** — what this skill does, in one sentence. Comes from the skill's `description` field
 
-The fastest way to differentiate is to name what you're attacking:
-- baogong attacks "AI 空泛润色（空泛形容词堆砌）"
-- luban attacks "直接让 Agent 改"
-- paoding attacks "看完 50 条笔记还是说不清任何一个为什么爆"
+Then proceed to the type card's Mandatory sections (Hook, Proof, etc.).
 
-Generic claims like "better quality" don't work. Specific attacks do.
+## 3 Writing Principles (from 35-sample research)
 
-**7. Badges are the quickest social proof — but not the only one.**
+Iron Laws say WHAT must be in the README. These principles say HOW to write it. They emerged from analyzing why the highest-performing READMEs in the dataset outperform — and are more important than any individual section checklist.
 
-Badge matrix is the minimum: License + skills.sh status + GitHub stars + runtime badges. They signal legitimacy in under 1 second.
+**Principle 1: Find the ONE dominant proof.**
 
-But badges alone are thin. Layer deeper social proof when available:
-- **Usage evidence:** install counts, download numbers, "used by X teams/people"
-- **Testimonials:** real user quotes, not fabricated praise. Link to source.
-- **Third-party validation:** mentioned in newsletters, ranked in lists, recommended by known figures
-- **Methodology transparency:** when the skill is too new for usage data, the creator's process IS the social proof — show your research, your data, your sources
+Every high-star README has one thing that does 80% of the convincing:
+- guizang = the full-width screenshots
+- humanizer = the 33-pattern checklist
+- colleague = "You AI guys are traitors to the codebase"
+- karpathy = the 4 rules themselves
+- academic-research = the 4-skill pipeline diagram
 
-Example: nuwa-skill's Star History chart → visual social proof that says "this isn't abandoned, it's growing." Its "入选标准" section → methodology transparency as social proof when there's no usage data yet.
+No one succeeds with "10 features, equally weighted." Readers don't read READMEs — they scan. They hit one proof strong enough to decide, or they leave.
 
-**8. Emotional connection opens the door that logic closes.**
+**Your first job in Step 2 is to identify this ONE proof for the user's skill. Every type card below has a "Proof format" line — that's where the ONE proof lives. Everything else is supporting structure.**
 
-A feature list tells people what the skill does. An origin story tells them WHY you built it — and that's what makes them care.
+**Principle 2: Proof must touch every claim.**
 
-Elements:
-- **Origin story:** "I built this because [specific pain/frustration]. The existing options [specific gap]."
-- **Personal motivation:** not corporate "we're excited to announce" — real human voice. What made you spend weekends on this?
-- **Relatable pain point:** "If you've ever [common frustration], you know why this exists."
+Strong READMEs: `claim → proof (within 3 lines) → claim → proof → claim → proof`
+Weak READMEs: `claim → claim → claim → ... → proof section (reader already gone)`
 
-Examples:
-- colleague-skill: "You AI guys are traitors to the codebase" → emotional hook that makes you feel the frustration before you even know what the skill does
-- nuwa-skill's backstory about distilling thinking patterns → personal mission, not feature pitch
-- baogong: "不是润色器。是求职教练。" → emotional positioning that says "I understand your real problem"
+Every assertion needs evidence within 3 lines. Not "we'll prove it later" — proof and claim travel as a unit. A Limitations section the reader never scrolls to is the same as no Limitations section.
 
-Even a 2-sentence origin story beats 10 feature bullet points. Humans decide with emotion first, then justify with logic.
+**Principle 3: Name what you're killing.**
 
-## Type 1: 作品产出型 (Output Type)
+Every individual skill that broke 1K stars has a named attack target:
+- luban → "直接让 Agent 改"
+- paoding → "看完 50 条笔记还是说不清为什么爆"
+- colleague → "traitors to the codebase"
 
-**Core question:** "What does this produce? Show me."
+"Better than existing tools" = invisible. Naming the specific pain/competitor/bad-practice creates instant "I have that problem!" recognition.
 
-**Core strategy:** Screenshots, demos, and real examples dominate the first screen. The reader judges by seeing, not by reading.
+This is the single highest-ROI sentence in any Skill README. It belongs in the first 3 lines, not buried in a comparison table.
 
-### Mandatory sections (in order)
+---
 
-1. **Hook line** — one sentence that captures the unique value. Can be storytelling (nuwa: "你想蒸馏的下一个员工，何必是同事"), direct (guizang: "横向翻页网页 PPT"), or emotional (colleague-skill: "You AI guys are traitors to the codebase").
-2. **Effect proof** — the most important section. Takes 40-60% of first screen. Full-width screenshots, real conversation examples, or GIF demos. NOT thumbnails, NOT descriptions of what it does. **Must appear before Install command** — readers need to see the output BEFORE they decide to install. If screenshots are unavailable (text-only README), use visual anchor descriptions (e.g., "像 Monocle 杂志贴上了代码") + conversation examples.
-3. **Install + first use** — one command to install, one line to send to agent. Place AFTER Effect proof, not before.
-4. **What it delivers** — structured list of output formats, quality guarantees.
-5. **Honest limitations** — what it CANNOT produce, what it might get wrong.
-6. **Real examples** — at least 2, preferably 3-4, showing different styles/use cases.
-7. **Conversation example** — show at least 1 real User/Agent dialogue. The reader needs to see what it actually looks like to interact with this skill. Format: `User: "..." Agent: "..."`. This is NOT optional — Iron Law 3 mandates it for all types.
+## Type 1: 作品产出型 (Output)
 
-### Optional but powerful
+**Decision question:** "What does this produce? Show me."
+**ONE proof:** A real output screenshot or demo that takes 40-60% of first screen. Reader decides by seeing, not reading. Everything else supports this.
+**Proof format:** Full-width screenshots, GIFs, or rendered conversation output.
 
-- **Style variation preview** — if the skill has multiple styles/modes, show micro-thumbnails of each. guizang-ppt does this brilliantly with 5+4 theme previews.
-- **Star history chart** — if the project has GitHub traction, show the growth curve.
-- **Naming ritual** — create memorable names for your process steps. Creates brand identity (cailun's "章纸·方纸·对纸·招纸·流纸·据纸·签纸").
+**Mandatory sections (in order):**
+1. **Hook** — one sentence: storytelling, direct, or emotional
+2. **Effect proof** — 40-60% of first screen. Real output, not descriptions. Must appear BEFORE install. If no screenshots, use visual anchor descriptions + conversation examples
+3. **Install + first use** — one command to install, one line to send to agent
+4. **Deliverables** — output formats and quality guarantees
+5. **Limitations** — what it cannot produce, what it might get wrong
+6. **Examples** — at least 2, showing different styles/use cases
 
-### Anti-patterns
+Optional: style variation thumbnails, star history chart, naming ritual for process steps.
 
-- Describing output in text instead of showing it
-- Using tiny thumbnails that require clicking to see
-- Putting the install command after 3 paragraphs of philosophy
+**Anti-patterns:** describing output in text instead of showing it · tiny thumbnails · install after philosophy
 
-### Benchmark
+**Benchmarks:** `guizang-ppt-skill` (screenshot-first layout, dual visual system), `nuwa-skill` (storytelling + star history, multi-language), `cailun-skill` (6 real screenshots + naming ritual)
 
-Study `guizang-ppt-skill` README for screenshot-first layout, `nuwa-skill` README for storytelling + dialogue examples, `cailun-skill` README for ritual naming + iron laws.
+**Verify (first-time reader, 15 seconds):**
+- [ ] Can they see what the skill produces (not just read about it)?
+- [ ] Can they install without scrolling?
+- [ ] Can they name one differentiator?
+- [ ] Do they see what interacting with this skill looks like?
 
-### ✅ Verification Checklist (for the human)
+---
 
-Have someone who's never seen this skill read the README for 15 seconds, then ask them:
-- [ ] Can they tell what this skill produces within 10 seconds?
-- [ ] Can they see the output (not just read about it)?
-- [ ] Do they know how to install it without scrolling?
-- [ ] Can they name one thing that makes it different from similar tools?
+## Type 2: 提效/流程型 (Efficiency)
 
-If any answer is "no", the README is not done.
+**Decision question:** "How much better/faster is this than what I do now?"
+**ONE proof:** A Before/After comparison that makes the improvement undeniable in one glance. This single comparison does 80% of the convincing.
+**Proof format:** Side-by-side table (preferred), diff, numbers table, or competitor comparison.
 
-## Type 2: 提效/流程型 (Efficiency Type)
+**Mandatory sections (in order):**
+1. **Pain point hook** — rhetorical question or direct attack that makes reader feel the pain
+2. **Before/After comparison** — the most important section. Choose the right form:
+   - **Side-by-side table** (default) — columns: Before | After, rows: specific metrics. Best scannability
+   - **Numbers table** — from X → Y, saving Z. Best for quantifiable improvements
+   - **Competitor comparison table** — columns: Old Way | This Skill. Best for method displacement
+   - **Diff format** — red/green or strikethrough. Best for text transformation
+   - Avoid: sequential top-bottom blocks without visual separation — readers can't compare what they can't see simultaneously
+3. **Install + first use** — one command, one agent instruction
+4. **Process visualization** — workflow as table, diagram, or numbered steps
+5. **Quantitative proof** — real numbers from real usage, or specific case studies with measurable outcomes
+6. **Trust system** — safeguards, limits, failure modes. Efficiency skills need trust most
+7. **Limitations** — honest trade-offs (tokens, model requirements, failure modes)
 
-**Core question:** "How much better/faster/cheaper is this than my current approach?"
+**Anti-patterns:** "80% better" without showing what that means · B/A that looks like rephrasing · no quantitative evidence · trust system missing
 
-**Core strategy:** Before/After comparison is the soul. The form can vary—images, diffs, numbers, tables—but the comparison MUST be specific and quantified.
+**Benchmarks:** `luban-skill` (numbers + competitor comparison table + demo GIF), `paoding-skill` (pain point scenarios + symmetric phrasing + zero API), `karpathy-skills` (176K⭐ extreme minimalism: 4 rules, no B/A, pure problem→solution — proves clarity alone can win at scale)
 
-### Mandatory sections (in order)
-
-1. **Pain point hook** — make the reader feel the pain they already know. Use rhetorical questions (luban: "你写了一个 Skill，自己用着挺好。然后呢？") or direct attacks (baogong: "别的工具给你润色。包公开堂——一条龙审完").
-2. **Before/After comparison** — the most important section. Form depends on skill nature:
-   - Visual output → full-width Before/After screenshot
-   - Text output → diff-format comparison with specific line changes
-   - Process improvement → numbers table (from X to Y, saving Z)
-   - Method comparison → competitor comparison table
-3. **Install + first use** — one command, one agent instruction.
-4. **Process visualization** — show the workflow. The reader needs to understand WHAT changes, not just that something changes. Use tables, ASCII diagrams, or numbered steps.
-5. **Quantitative proof** — real numbers from real usage. luban: "83,725 条回放、327 假 AI、15/20→4/20、806→523 卡". If no large-scale data, use specific case studies with measurable outcomes.
-6. **Trust system** — efficiency skills need trust more than any other type. If the skill makes decisions autonomously, explain the safeguards. Examples: baogong's "铡刀门 10 条", luban's "强制停手点".
-7. **Cost/limitations** — be honest about trade-offs. Does it consume more tokens? Require specific models? Have failure modes?
-8. **Conversation example** — show at least 1 real User/Agent dialogue. The reader needs to see the skill in action, not just trigger words. Format: `User: "trigger phrase" Agent: "[response demonstrating the improved behavior]"`. Iron Law 3 mandates this.
-
-### Before/After forms (choose the right one)
-
-```
-# Form A: Visual diff (baogong)
-Before: 负责数据分析相关工作，得到领导认可
-After:  **数据监控体系**：搭建核心指标看板，覆盖 12 条业务线，
-        异常检出从人工抽查（~2天）→ 实时告警
-
-# Form B: Numbers table (luban)
-| 指标 | 打磨前 | 打磨后 |
-|------|--------|--------|
-| 卡点数 | 20 | 4 |
-
-# Form C: Competitor comparison (luban, paoding)
-| 维度 | 直接让Agent改 | 鲁班 |
-|------|-------------|------|
-| 方法论 | 无 | 五动作体系 |
-
-# Form D: Conversation comparison (caveman-style)
-Before: [verbose agent response, 200 words]
-After:  [caveman response, 50 words, same precision]
-```
-
-### Anti-patterns
-
-- "Improves efficiency by 80%" without showing what 80% means
-- Before/After that looks like the same thing rephrased
-- No quantitative evidence at all
-- Trust system missing or hand-wavy
-
-### Benchmark
-
-Study `baogong-skill` README for Before/After + trust system, `luban-skill` README for numbers + competitor comparison +反问共情, `paoding-skill` README for pain point scenarios.
-
-### ✅ Verification Checklist (for the human)
-
-Have someone who's never seen this skill read the README for 15 seconds, then ask them:
-- [ ] Can they see a Before/After comparison in the first screen?
-- [ ] Are the numbers specific (not "80% better" but "from X to Y, saving Z")?
-- [ ] Is there a trust system (safeguards/limitations explicit)?
+**Verify (first-time reader, 15 seconds):**
+- [ ] Can they see a Before/After in the first screen?
+- [ ] Are numbers specific (not "80% better" but "from X to Y")?
+- [ ] Is there a trust system (safeguards explicit)?
 - [ ] Can they tell what process this improves without reading a paragraph?
 
-If any answer is "no", the README is not done.
+---
 
-## Type 3: 能力增强型 (Capability Type)
+## Type 3: 能力增强型 (Capability)
 
-**Core question:** "What capability does this add to my agent that it doesn't have now?"
+**Decision question:** "What can my agent do now that it couldn't before?"
+**ONE proof:** The categorized pattern/capability checklist. When readers see the full list of what you detect/transform, they self-assess whether they need it. The list IS the pitch.
+**Proof format:** Categorized pattern/capability list + before/after capability demo.
 
-**Core strategy:** Pattern checklists and coverage matrices. The reader needs to see the RANGE of new capabilities, not just one example.
+**Mandatory sections (in order):**
+1. **Capability gap** — what the agent cannot do without this skill, concretely
+2. **Pattern/capability checklist** — list every pattern, rule, or capability added. Categorize them. This is the strongest weapon for this type
+3. **Before/After capability demo** — "cannot do X → can do X" (not "bad → good")
+4. **Coverage matrix** — if multi-domain, show coverage table or lifecycle diagram
+5. **Install + activation** — how to install AND how to know it's working
+6. **Verification mechanism** — capability skills must prove they work. "Looks correct" is never enough
 
-### Mandatory sections (in order)
+**Anti-patterns:** abstract descriptions without demos · missing pattern checklist · no verification method
 
-1. **Capability gap statement** — what the agent CANNOT do without this skill, in concrete terms.
-2. **Pattern/capability checklist** — the strongest weapon for this type. List every pattern, detection rule, or capability the skill adds. Categorize them. humanizer does this brilliantly with 24 patterns in 5 categories (Content / Language / Style / Communication / Filler).
-3. **Before/After capability demo** — show what the agent can do with the skill that it couldn't do before. NOT "before was bad, after is good" but "before: cannot do X at all → after: can do X, and here's proof."
-4. **Coverage matrix** — if the skill covers multiple domains, show a table or visual of coverage. addyosmani's agent-skills uses a lifecycle diagram (Define → Plan → Build → Verify → Review → Ship).
-5. **Install + activation** — how to install AND how to know it's working.
-6. **Verification mechanism** — capability skills must prove they're working. "看起来正确" is never enough.
-7. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent detecting/transforming something the user sends. Format: `User: "[input with AI patterns]" Agent: "[output with patterns removed, annotated]"`. Iron Law 3 mandates this.
+**Benchmarks:** `humanizer` (33 patterns in 5 categories + per-pattern B/A), `code-review-skill` (1K⭐, four-phase flowchart + severity color coding, bilingual), `addyosmani/agent-skills` (lifecycle organization + rationalization tables)
 
-### Anti-patterns
+**Verify (first-time reader, 15 seconds):**
+- [ ] Can they see the full capability list (not just one example)?
+- [ ] Is there a capability demo ("can't → can")?
+- [ ] Can they verify the skill is working?
+- [ ] Do they know how to activate it?
 
-- Describing capabilities abstractly without showing them in action
-- Missing the pattern checklist — this is the #1 weapon, don't skip it
-- No verification method — capability skills are invisible when they fail
+---
 
-### Benchmark
+## Type 4: 风格/视角型 (Style)
 
-Study `humanizer` README for the 24-pattern checklist structure, `addyosmani/agent-skills` README for lifecycle organization + rationalization tables.
+**Decision question:** "What does it sound like? Let me feel the difference."
+**ONE proof:** Side-by-side text comparison — same prompt, generic vs styled output. The reader FEELS the difference without being told. If this comparison doesn't land, nothing else will.
+**Proof format:** Same prompt → generic output vs styled output, side by side.
 
-### ✅ Verification Checklist (for the human)
+**Mandatory sections (in order):**
+1. **Style anchor** — one sentence IN the style itself, not describing the style
+2. **3 comparison examples** — same prompt, generic vs styled output, with brief annotation explaining the difference
+3. **Trigger words** — exactly what phrases activate this style
+4. **Methodology** — sources, principles, or frameworks. Builds credibility. Weave into Style anchor for simple styles; standalone section for multi-source distillations
+5. **When NOT to use** — style skills are easy to over-apply. Define the boundary
 
-Have someone who's never seen this skill read the README for 15 seconds, then ask them:
-- [ ] Can they see the FULL list of capabilities (not just one example)?
-- [ ] Is there a Before/After capability demo ("can't do X" → "can do X")?
-- [ ] Can they verify the skill is working (verification method stated)?
-- [ ] Do they know how to activate the skill after install?
+Good comparisons use realistic prompts the reader would actually use, and annotate the difference rather than just showing it.
 
-If any answer is "no", the README is not done.
+**Anti-patterns:** describing style in adjectives without showing it · toy examples · no methodology
 
-## Type 4: 风格/视角型 (Style Type)
+**Benchmarks:** `nuwa-skill` (multi-perspective dialogue: Naval, Musk, Jobs), `colleague-skill` (19.4K⭐, emotional hook + multi-source distillation)
 
-**Core question:** "What does it sound like? Let me feel the difference."
+**Verify (first-time reader, 15 seconds):**
+- [ ] Can they see 3 comparisons (same input, two outputs)?
+- [ ] Can they FEEL the difference by reading?
+- [ ] Do they know what phrases trigger this style?
+- [ ] Can they tell when NOT to use it?
 
-**Core strategy:** Generated text comparisons. The reader judges by reading, not by being told.
+---
 
-### Mandatory sections (in order)
+## Type 5: 合集/目录型 (Collection)
 
-1. **Style anchor** — one sentence that captures the essence. "江南体：画面先行，悲壮热血美学。" Not a description—a sample line in the style itself.
-2. **3 comparison examples** — the soul of style-type READMEs. Each shows:
-   - The same prompt
-   - Generic AI output (left/before)
-   - Style-specific output (right/after)
-   - Brief annotation explaining what the style adds
-3. **Trigger words** — exactly what phrases activate this style. Users need to know what to say to their agent.
-4. **Underlying methodology** — what sources, principles, or frameworks the style is built from. This builds credibility. Can be a standalone section or woven into the Style anchor paragraph. For small/single-source styles, weaving is fine; for multi-source distillations (>5 sources), use a standalone section.
-5. **When NOT to use** — style skills are easy to over-apply. Define the boundary.
-6. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent speaking in the style voice. Format: `User: "[question]" Agent: "[response in the style voice]"`. This is different from comparison examples — it's an interaction, not an output comparison. Iron Law 3 mandates this.
+**Decision question:** "What skills are available? Help me browse and choose."
+**ONE proof:** The categorized listing itself — its scan speed IS the product quality. If a reader can find a relevant skill in 10 seconds, the README works.
+**Proof format:** Categorized tables with functional one-line descriptions.
 
-### What makes a good comparison example
+For skill COLLECTIONS and awesome-lists, not individual skills.
 
-- Same input, two outputs side by side
-- Realistic, non-trivial prompts the reader would actually use
-- Annotation explains the difference, not just shows it
-- At least one example from a domain the reader cares about (tech, product, writing)
+**Mandatory sections (in order):**
+1. **Collection positioning** — what's curated, selection criteria. One paragraph max
+2. **Quality standards** — what earns a spot. Filters submissions AND builds trust
+3. **Categorized listing** — by domain/provider, not tech stack. Each entry: `[org/repo](link) — what AND why`
+4. **Install guide** — how to install skills from this collection
+5. **Contribution guide** — submission process and standards
 
-### Anti-patterns
+Good one-liner: tells what AND why. Bad: "A collection of skills." Worse: "Revolutionary AI-powered ecosystem."
 
-- Describing the style in adjectives without showing it
-- Using toy examples that prove nothing
-- Skipping the methodology section (style skills feel like magic without it)
+**Anti-patterns:** alphabetical without categories · entries without descriptions · no quality standards
 
-### Benchmark
+**Benchmarks:** `awesome-cursorrules` (40K⭐, 13-category index), `alirezarezvani/claude-skills` (18.2K⭐, cross-platform compatibility matrix), `travisvn/awesome-claude-skills` (13.5K⭐, "Skills vs Other Approaches" comparison)
 
-Study `nuwa-skill` README dialogue examples (Naval, Musk, Jobs, Zhang Xuefeng), `colleague-skill` README for emotional hook + dialogue flow.
+**Verify (first-time reader, 15 seconds):**
+- [ ] Can they find a skill within 10 seconds?
+- [ ] Does every entry tell what AND why?
+- [ ] Are skills categorized (not alphabetical)?
+- [ ] Can they tell the quality standards?
 
-### ✅ Verification Checklist (for the human)
+---
 
-Have someone who's never seen this skill read the README for 15 seconds, then ask them:
-- [ ] Can they see 3 comparison examples (same input, two outputs)?
-- [ ] Can they FEEL the difference by reading, not by being told?
-- [ ] Do they know exactly what phrases trigger this style?
-- [ ] Can they tell when NOT to use this style?
+## Type 6: 平台/工具型 (Platform)
 
-If any answer is "no", the README is not done.
+**Decision question:** "How do I manage/install/organize skills?"
+**ONE proof:** The one-command quickstart. If the reader can copy-paste one line and it works, trust is established. Everything after is progressive disclosure.
+**Proof format:** Copy-pasteable commands + compatibility matrix.
 
-## Type 5: 合集/目录型 (Collection/Catalog Type)
+For CLI tools, package managers, and platforms that handle skills.
 
-**Core question:** "What skills are available? Help me browse and choose."
+**Mandatory sections (in order):**
+1. **One-command quickstart** — one copy-paste line, must work, must be in first screen
+2. **Installation methods** — all supported ways, ordered by simplicity
+3. **Core commands** — scannable table (install, list, search, remove, validate)
+4. **Compatibility** — agents, runtimes, platforms supported. Core trust point
+5. **Progressive disclosure** — quick start → common workflows → advanced → create your own
 
-**Core strategy:** Uniform format + quality standards + discoverable categorization. The reader needs to scan, not read. Every entry answers "what is it and why should I care" in one line.
+**Anti-patterns:** architecture diagrams before commands · "revolutionary platform" language · buried compatibility
 
-**Note:** This type is for skill COLLECTIONS and awesome-lists, not for individual skills. If you're writing a README for a single skill, this type does not apply.
+**Benchmarks:** `vercel-labs/skills` (npx quickstart + progressive disclosure), `daymade/claude-code-skills` (1.2K⭐, marketplace-as-README: per-skill GIF demo cards)
 
-### Mandatory sections (in order)
-
-1. **Collection positioning** — what kind of skills are curated here, what's the selection criteria. One paragraph max.
-2. **Quality standards** — what makes a skill earn a spot in this list. heilcheng defines 6 criteria upfront. This simultaneously filters submissions and builds reader trust.
-3. **Categorized listing** — skills organized by domain/provider, not by tech stack. Each entry: `[org/repo](link) — one-line description of what it does and why it matters`.
-4. **Install guide for the ecosystem** — how to install skills from this collection. Link to platform/tool if applicable.
-5. **Contribution guide** — how to submit, what standards to meet.
-6. **Conversation example** — show at least 1 real User/Agent dialogue. Show how someone asks for a skill recommendation and how the agent navigates the collection. Format: `User: "I need X" Agent: "Based on your need, I recommend [skill] because [reason]."`. Iron Law 3 mandates this.
-
-### What makes a good one-line description
-
-```
-# Good: tells you what AND why
-[anthropics/skills](link) — Official Claude Code skills for documents (docx, pdf, pptx, xlsx)
-
-# Bad: tells you what but not why
-[anthropics/skills](link) — A collection of skills
-
-# Bad: marketing fluff, no information
-[some/skill](link) — Revolutionary AI-powered skill ecosystem platform
-```
-
-### Anti-patterns
-
-- Alphabetical listing without categorization (forces linear scan)
-- Entries without descriptions ("a skill" — meaningless)
-- No quality standards (reader can't trust curation)
-- Descriptions that are marketing copy instead of functional summaries
-
-### Benchmark
-
-Study `VoltAgent/awesome-agent-skills` for provider-based categorization, `heilcheng/awesome-agent-skills` for upfront quality criteria, `github/awesome-copilot` for badge-driven social proof at scale (35K stars).
-
-### ✅ Verification Checklist (for the human)
-
-Have someone who's never seen this collection read the README for 15 seconds, then ask them:
-- [ ] Can they find a skill in the list within 10 seconds?
-- [ ] Does every entry have a one-line description that tells what AND why?
-- [ ] Are skills categorized (not just alphabetically listed)?
-- [ ] Can they tell what quality standards a skill must meet?
-
-If any answer is "no", the README is not done.
-
-## Type 6: 平台/工具型 (Platform/Tool Type)
-
-**Core question:** "How do I manage, install, or organize skills?"
-
-**Core strategy:** One-command quickstart dominates. Progressive disclosure: the reader's first question is "how do I use this in the next 30 seconds?", not "what's the philosophy?".
-
-**Note:** This type is for CLI tools, package managers, and platforms that handle skills. Examples: `npx skills`, `agentskills` spec, skill marketplaces.
-
-### Mandatory sections (in order)
-
-1. **One-command quickstart** — literally one line the user can copy-paste. `npx skills add <name>`. Must work. Must be visible in first screen area.
-2. **Installation methods** — all supported ways to install/use the tool. Usually 2-3 methods ordered by simplicity.
-3. **Core commands reference** — fast-scannable table of what you can do: install, list, search, remove, validate.
-4. **Compatibility statement** — which agents, runtimes, platforms are supported. This is a core trust point for platform tools.
-5. **Progressive disclosure** — quick start → common workflows → advanced features → create your own. Each section is progressively deeper. The reader self-selects their depth.
-6. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent using the tool to accomplish something. Format: `User: "check PR #55 CI status" Agent: "[reads gh CLI output and summarizes] → All checks passed. The failing step was in the test job — here's the log:` ... `"`. Iron Law 3 mandates this.
-
-### Anti-patterns
-
-- Starting with architecture diagrams before showing a single command
-- "Revolutionary platform" language instead of "here's how to use it"
-- Burying compatibility info (users will find out the hard way)
-
-### Benchmark
-
-Study `vercel-labs/skills` README for `npx` quickstart + progressive disclosure, `agentskills/agentskills` for spec-first presentation.
-
-### ✅ Verification Checklist (for the human)
-
-Have someone who's never used this tool read the README for 15 seconds, then ask them:
+**Verify (first-time reader, 15 seconds):**
 - [ ] Can they copy-paste one command and have it work?
-- [ ] Can they find the compatibility statement without searching?
-- [ ] Can they find the command they need in the reference table?
-- [ ] Does the README answer "how do I use this?" before "what is this?"?
+- [ ] Can they find the compatibility statement?
+- [ ] Can they find the command they need?
+- [ ] Does the README answer "how to use" before "what is this"?
 
-If any answer is "no", the README is not done.
+---
 
-## Type 7: 安全/专业领域型 (Security/Specialized Type)
+## Type 7: 安全/专业领域型 (Security)
 
-**Core question:** "Can I trust this in my critical/production workflow?"
+**Decision question:** "Can I trust this in my critical workflow?"
+**ONE proof:** The trophy case — real findings, real bugs caught, real vulnerabilities discovered. "I claim to detect X" vs "I have detected X, here's the CVE." Casual tone works AGAINST you here — precision IS the marketing.
+**Proof format:** Trophy case (real findings) + verb-driven capability list + standards coverage.
 
-**Core strategy:** Domain authority established through precise terminology, verifiable results, and professional credibility signals. General audience tactics (emojis, casual tone) often work AGAINST you here — precision IS the marketing.
+**Mandatory sections (in order):**
+1. **Domain positioning** — specific problem, precise technical terms. No marketing language
+2. **Trophy case** — real findings, bugs caught, vulnerabilities discovered. Converts "I claim" into "I have proven"
+3. **Verb-driven capability list** — Detect, Audit, Identify, Analyze, Prevent. Each verb → one concrete capability
+4. **Standards/endorsement** — compliance badges, OWASP/ASVS coverage, certification references
+5. **Install + scope** — how to install AND what it will/won't touch. Define boundary precisely
 
-### Mandatory sections (in order)
+**Anti-patterns:** casual tone or emoji · "trust me" without results · vague "helps with security" · no scope definition
 
-1. **Domain positioning** — what specific security/domain problem does this solve, in precise technical terms. No marketing language.
-2. **Trophy case / Results** — game-changing for this type. List real findings, bugs caught, vulnerabilities discovered. trailofbits uses "Found using Trail of Bits Skills" tags. This converts "I claim to detect X" into "I have detected X, here's proof."
-3. **Verb-driven capability list** — use precise action verbs: Detect, Audit, Identify, Analyze, Prevent. Each verb maps to a concrete capability with a one-line explanation.
-4. **Domain-specific badge/endorsement** — if applicable: compliance badges, certification references, industry recognition.
-5. **Install + scope** — how to install AND what it will/won't touch. Security tools that "scan everything" scare users. Define the boundary precisely.
-6. **Conversation example** — show at least 1 real User/Agent dialogue. Show a real audit scenario from start to verdict. Format: `User: "audit this skill: [url]" Agent: "Scanning... [lists red flags found] → Verdict: ⚠️ CAUTION — 2 red flags. Here's the full audit report:"`. Iron Law 3 mandates this.
+**Benchmarks:** `trailofbits/skills` (trophy case + verb-driven, 10 domains), `code-audit` (750⭐, anti-hallucination methodology + 55+ vuln types), `claude-code-owasp` (234⭐, OWASP Top 10:2025 + ASVS 5.0 standards matrix)
 
-### Anti-patterns
-
-- Casual tone or emoji-heavy presentation for security tools
-- "Trust me" claims without verifiable results
-- Vague capability descriptions ("helps with security" — how?)
-- No scope definition (users fear the tool will break things)
-
-### Benchmark
-
-Study `trailofbits/skills` README for trophy case + verb-driven descriptions.
-
-### ✅ Verification Checklist (for the human)
-
-Have someone who's never seen this skill read the README for 15 seconds, then ask them:
-- [ ] Can they see verifiable results (not just claims)?
+**Verify (first-time reader, 15 seconds):**
+- [ ] Can they see verifiable results (not claims)?
 - [ ] Can they tell exactly what the tool will/won't touch?
-- [ ] Is the language precise (no casual tone/emoji)?
-- [ ] Can they see domain-specific badges/endorsements?
+- [ ] Is the language precise (no casual emoji)?
+- [ ] Can they see standards coverage or endorsements?
 
-If any answer is "no", the README is not done.
+---
 
-## Type 8: 科学/研究型 (Science/Research Type)
+## Type 8: 科学/研究型 (Science)
 
-**Core question:** "What complex, multi-step workflows does this unlock?"
+**Decision question:** "What complex workflows does this unlock for my research?"
+**ONE proof:** A complete end-to-end workflow example — from research question to final output. Researchers evaluate by "can this do MY pipeline?", not by feature counts.
+**Proof format:** Domain matrix + end-to-end pipeline examples + institutional/usage proof.
 
-**Core strategy:** Domain categorization + complete workflow examples. Scientists and researchers evaluate tools by what workflows they enable, not by feature lists.
+**Mandatory sections (in order):**
+1. **Domain matrix** — emoji + category + skill count. Communicates breadth instantly
+2. **Workflow examples** — 2-3 COMPLETE end-to-end pipelines (not feature demos). Each: research question → steps → output
+3. **Expectation management** — "accelerator, not replacement." Preempt the "can it do my PhD?" question
+4. **Install + domain activation** — how to install AND activate specific domain capabilities
+5. **Social proof** — scientist count, citations, institutional affiliation
 
-### Mandatory sections (in order)
+**Anti-patterns:** features without workflows · "AI-powered" hype · missing expectation management · no domain categorization
 
-1. **Domain matrix** — emoji + category name + skill count. K-Dense-AI uses 16 domains (🧬 Genomics, 💊 Drug Discovery, 🔬 Protein Design...). Instantly communicates breadth and specialization.
-2. **Multi-step workflow examples** — the soul of this type. Show 2-3 COMPLETE workflows from start to finish. Not feature demos — real end-to-end research pipelines. Each workflow should answer: "What research question does this answer? What are the steps? What's the output?"
-3. **Expectation management** — critical for this type. "Not a ceiling, but an accelerator." "Not replacing scientists, augmenting them." Preempt the "can it do my entire PhD?" question.
-4. **Install + domain activation** — how to install AND how to activate specific domain capabilities.
-5. **Social proof** — scientist count, citations, institutional affiliations. "160,000+ scientists" (K-Dense-AI) is powerful — it says "your peers are already using this."
-6. **Star history / growth** — academic adoption curves build credibility.
-7. **Conversation example** — show at least 1 real User/Agent dialogue. Show the agent running a validation protocol from start to result. Format: `User: "validate my prediction model" Agent: "Running 5-layer validation protocol... [Layer 1 results] → [Layer 2 results] → ... → Overall: model shows signs of overfitting in Layer 3. Here's the learning curve:"`. Iron Law 3 mandates this.
+**Benchmarks:** `academic-research-skills` (31.7K⭐, 4-skill pipeline + human-in-the-loop + anti-hallucination gates), `Stanford REAP` (1.9K⭐, institutional backing + "verify yourself in 2 minutes"), `K-Dense-AI` (17 domains + "160,000+ scientists")
 
-### Anti-patterns
-
-- Listing features without showing complete workflows they enable
-- "AI-powered" language (scientists are skeptical of hype)
-- Missing expectation management (scientists will find edge cases and judge harshly)
-- No domain categorization (scientists search by their field, not by feature name)
-
-### Benchmark
-
-Study `K-Dense-AI/claude-scientific-skills` README for domain matrix + 6 multi-step workflow examples + "160,000+ scientists" social proof.
-
-### ✅ Verification Checklist (for the human)
-
-Have someone who's never seen this skill read the README for 15 seconds, then ask them:
+**Verify (first-time reader, 15 seconds):**
 - [ ] Can they see at least 2 complete workflow examples?
-- [ ] Can they tell what domain this covers (not just "AI for science")?
-- [ ] Is the expectation management clear ("not a ceiling, but an accelerator")?
-- [ ] Can they see social proof (scientist count, institutional affiliations)?
+- [ ] Can they tell what domain this covers?
+- [ ] Is expectation management clear?
+- [ ] Can they see social proof (count, institution)?
 
-If any answer is "no", the README is not done.
+---
 
-## Quick Reference: Section Checklist by Type
+## Quick Reference
 
 | Section | Output | Efficiency | Capability | Style | Collection | Platform | Security | Science |
 |---------|--------|-----------|------------|-------|-----------|---------|---------|---------|
-| Hook/positioning | Story/grab | Pain point | Gap statement | Style anchor | Selection criteria | One-command | Domain precision | Domain matrix |
-| Effect proof | Screenshots | Before/After | Pattern list | 3 comparisons | Categorized list | Install methods | Trophy case | Workflow examples |
-| Install | Required | Required | Required | Required | Ecosystem guide | Core commands | Scope boundary | Domain activation |
-| Process/methodology | Output flow | Workflow viz | Coverage matrix | Source principles | Quality standards | Progressive disclosure | Verb-driven list | Expectation mgmt |
-| Quantitative proof | Variants count | Real numbers | Verification | N/A | Entry count | Compatibility | Verified findings | Scientist count |
-| Trust system | Limitations | Safeguards | Verification | Boundaries | Curation criteria | — | Domain badges | Star history |
-| Real examples | 3-4 demos | Case studies | Activation demo | Trigger words | — | Workflows | — | — |
-| Conversation example | Required | Required | Required | Required | Required | Required | Required | Required |
-| 社会证明 | Demo 数量 | 节省数字 | 检测模式数 | 使用者数量 | 收录数量 | 安装量/兼容性 | 审计案例 | 验证模型数 |
-| 情感连接 | 创造者故事 | 痛点共鸣 | "我总看到" | "我想像XX一样" | 筛选哲学 | "厌倦切换" | "我被坑过" | 研究动机 |
+| Hook | Story/grab | Pain point | Gap statement | Style anchor | Criteria | One-command | Domain precision | Domain matrix |
+| Proof | Screenshots | Before/After | Pattern list | 3 comparisons | Categorized list | Install methods | Trophy case | Workflows |
+| Install | After proof | After B/A | + activation | + triggers | Ecosystem guide | IS the hook | + scope | + domain |
+| Trust | Limitations | Safeguards | Verification | Boundaries | Quality standards | Compatibility | Standards | Expectation mgmt |
+| Social proof | Demo count | Savings numbers | Pattern count | User count | Entry count | Install count | Audit cases | Scientist count |
+| Emotional hook | Creator story | Pain resonance | "I kept seeing" | "I want to sound like" | Curation philosophy | "Tired of switching" | "I got burned" | Research motivation |
+
+## Failure Modes
+
+**Can't determine type in 2 questions →** Default to Type 2 (Efficiency). Its B/A + trust system is the most transferable. Note "type uncertain" for future improvement.
+
+**Skill doesn't match any type →** Use Type 2 baseline, skip verification checklist, ask user for a README they admire.
+
+**User corrects type mid-draft →** Stop. Ask user to describe the skill in their own words. Restart from Step 2. Do NOT patch — rewrite is faster.
+
+**Any failure after 2 rounds →** Conservative README: hook + install + 1 example + 1 limitation. Append `<!-- WARNING: Fallback mode. Type not determined. -->`.
 
 ## Common Mistakes
 
-### Applying the wrong type strategy
+- **Wrong type strategy** — screenshots for efficiency, text for output. Identify type FIRST.
+- **README = shorter SKILL.md** — SKILL.md tells agent HOW. README tells human WHY. Different audience.
+- **Install buried** — past 3 paragraphs = bounced. First scroll range, always.
+- **No limitations** — stating limits builds trust. Hiding them destroys it.
+- **Generic claims** — "better/faster" is invisible. "从~2天→实时告警" beats "提升效率" every time.
 
-Using screenshots for an efficiency skill (shows nothing about improvement). Using text descriptions for an output skill (reader can't see the output). Identify the type FIRST, then choose the strategy.
+## References
 
-### Treating README as a shorter SKILL.md
-
-The worst READMEs copy-paste SKILL.md content. SKILL.md tells the agent HOW to work. README tells the human WHY to install. Different audience, different content.
-
-### Missing the install command in first screen
-
-If the reader scrolls past 3 paragraphs to find the install command, they've already bounced. Install command must be in the first visible area.
-
-### No limitations section
-
-Every skill has limits. Stating them builds trust. Hiding them destroys it. All 4 benchmark READMEs (baogong, luban, nuwa, guizang) have explicit limitation sections.
-
-### Generic "improves quality" claims
-
-"Better", "faster", "higher quality" are invisible. Show specific changes. "异常检出从人工抽查（~2天）→ 实时告警" beats "提升数据监控效率" every time.
-
-## Further Reading
-
-The full 22-sample research dataset with per-sample analysis is in [references/research-data.md](references/research-data.md). Load it when you need detailed competitive analysis, specific README structure breakdowns, or want to see how a particular benchmark handles a specific section.
+35-sample research dataset with per-sample analysis: [references/research-data.md](references/research-data.md).
