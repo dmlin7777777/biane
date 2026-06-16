@@ -18,7 +18,7 @@ Different skill types need different proof. A PPT generator proves itself with s
 
 ## Workflow
 
-### Step 1: Identify type
+### Step 1: Identify type → 🔴 CP1
 
 Ask what the skill does. State your judgment in plain language the user can verify:
 
@@ -36,19 +36,36 @@ Do NOT ask "is this Type 3?" — the user doesn't know the taxonomy. Ask about b
 
 If unclear after 2 questions → default to Type 2 (Efficiency). Its Before/After + trust system is the most transferable baseline.
 
-### Step 2: Load type card + identify the ONE proof
+**🔴 CP1 — 类型确认：** 展示判断结果和理由，等用户确认后再进入 Step 2。用户纠正类型 → 不要 patch，从 Step 2 重新开始。
 
-Find the matching Type (1-8) below. Each card has a "ONE proof" line — this is the single element that will do 80% of the convincing. Before writing anything, identify what this proof IS for the user's skill:
+### Step 2: ONE proof + hero 定位 → 🔴 CP2
+
+Find the matching Type (1-8) below. Each card has a "ONE proof" line — this is the single element that will do 80% of the convincing. Before writing anything, identify what this proof IS for the user's skill.
+
+Then draft the hero positioning (1-2 sentences). This is where agent judgment diverges from user intent most often — the agent defaults to abstract descriptions, but the user knows which capability is the real differentiator.
+
+**Hero 定位句规则：**
+- 必须说清"从什么到什么"，每个动词具体（不是"针对X的Y工具"）
+- 最有差异化的能力放在第一个动词位置
+- 品牌隐喻放在 quote / section 标题里，不放在定位句里——两者分工明确
+- 正例（luban）：「把一个"能用的Skill"，打磨成"能被理解、能被安装、能被传播、能被验证、能持续进化"的公共资产」
+- 反例：「针对 JD 交互式定制简历的求职教练」—— 太抽象，任何同类工具都能这么说
+
+**🔴 CP2 — ONE proof + hero 确认：** 同时展示两项判断，等用户确认：
 
 ```
-"For your skill, the ONE proof is [specific thing].
- If this lands, readers install. If it doesn't, nothing else saves it.
- I'll build the README around this."
+"ONE proof: [具体是什么]
+ Hero 定位句: [1-2 句，纯具体动作链]
+ → 这两个方向对吗？"
 ```
+
+这是最关键的决策点。ONE proof 错了整个 README 方向就错，hero 定位句抽象了用户一定会要求返工。等用户确认后再动笔。
 
 **Boundary rule:** Types 5-8 are specialized (collection, platform, security, science). If the skill doesn't clearly match, default to Types 1-4.
 
-### Step 3: Draft + verify
+### Step 3: Draft + verify → 🔴 CP3
+
+Write the full README following the type card's mandatory sections + Universal Structure.
 
 After each major section, show a 2-line summary:
 
@@ -66,6 +83,8 @@ Re-read the target skill's SKILL.md and verify:
 - Conversation examples show behavior consistent with SKILL.md instructions
 
 If a claim can't be traced back, remove it or flag it. Don't round up, don't extrapolate. Agent 在总结时天然倾向"圆"出更完整的能力——这个检查就是拦这个的。
+
+**🔴 CP3 — 全稿确认：** Cross-reference check 通过后，展示完整 README 给用户审阅。用户可能要求调整任何部分——如果涉及类型或 ONE proof 变更，回退到 CP1/CP2 而不是 patch。
 
 ## 8 Iron Laws
 
