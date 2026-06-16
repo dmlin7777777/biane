@@ -397,11 +397,33 @@ For CLI tools, package managers, and platforms that handle skills.
 | Social proof | Demo count | Savings numbers | Pattern count | User count | Entry count | Install count | Audit cases | Scientist count |
 | Emotional hook | Creator story | Pain resonance | "I kept seeing" | "I want to sound like" | Curation philosophy | "Tired of switching" | "I got burned" | Research motivation |
 
+## Entry Modes
+
+Workflow assumes "write from scratch," but users also arrive with existing READMEs or incomplete inputs. Detect entry mode before Step 1:
+
+**Mode W (Write):** No existing README, or user explicitly says "帮我写 README." → Standard workflow (Step 1 → 2 → 3).
+
+**Mode R (Review/Improve):** User says "优化 README" / "review this README" / provides existing README.
+1. Read existing README + SKILL.md
+2. Score against Iron Laws (8-item checklist, pass/fail each)
+3. Identify type from existing README structure (skip CP1 if obvious)
+4. 🔴 CP-R: Present diagnosis — which laws fail, which type card sections are missing/weak, hero positioning quality. Ask user: "全部重写 or 定向修改?"
+5. Full rewrite → enter Step 1 as normal. Targeted fix → edit specific sections, run cross-reference check, → CP3
+
+**Mode S (No SKILL.md):** User provides only a repo URL or existing README, no SKILL.md available.
+1. Read all available context (README, repo structure, code comments, package.json description)
+2. Infer skill capabilities from what's available — but mark all inferences as `[推断]`
+3. 🔴 CP-S: Present inferred capabilities, ask user to confirm/correct before writing
+4. Proceed to Step 1 with confirmed capabilities as source of truth (replacing SKILL.md)
+5. Cross-reference check (Step 3) runs against user-confirmed capabilities instead of SKILL.md
+
 ## Failure Modes
 
 **Can't determine type in 2 questions →** Default to Type 2 (Efficiency). Its B/A + trust system is the most transferable. Note "type uncertain" for future improvement.
 
 **Skill doesn't match any type →** Use Type 2 baseline, skip verification checklist, ask user for a README they admire.
+
+**Multi-type conflict →** A skill can look like two types (e.g., baogong produces resumes = Type 1, but core value is the process = Type 2). Resolution: ask "What question does the reader ask FIRST — 'what does it produce?' or 'how is it better than what I do now?'" The answer picks the primary type. The secondary type's proof can appear as a supporting section but doesn't drive the README structure.
 
 **User corrects type mid-draft →** Stop. Ask user to describe the skill in their own words. Restart from Step 2. Do NOT patch — rewrite is faster.
 
