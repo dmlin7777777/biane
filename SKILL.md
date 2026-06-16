@@ -102,7 +102,7 @@ Before any type-specific section, every README starts with:
 
 Then proceed to the type card's Mandatory sections (Hook, Proof, etc.).
 
-## 3 Writing Principles (from 35-sample research)
+## 4 Writing Principles (from 35-sample research)
 
 Iron Laws say WHAT must be in the README. These principles say HOW to write it. They emerged from analyzing why the highest-performing READMEs in the dataset outperform — and are more important than any individual section checklist.
 
@@ -136,6 +136,15 @@ Every individual skill that broke 1K stars has a named attack target:
 "Better than existing tools" = invisible. Naming the specific pain/competitor/bad-practice creates instant "I have that problem!" recognition.
 
 This is the single highest-ROI sentence in any Skill README. It belongs in the first 3 lines, not buried in a comparison table.
+
+**Principle 4: Brand metaphor runs through, not just the hook.**
+
+High-star Chinese skills share one pattern: the cultural metaphor doesn't stop at the hook — it runs through section names, process descriptions, and terminology choices:
+- cailun（蔡伦）→ "造纸三律" + 7 种纸命名贯穿全文
+- baogong（包公）→ "堂审四幕"（调卷宗/当堂陈词/案卷归档/应对回话）+ 铡刀门
+- paoding（庖丁）→ 解牛隐喻贯穿分析流程
+
+The metaphor is not decoration — it's a memory anchor. Readers remember "堂审四幕" long after they forget "4-Phase Pipeline." When a skill has a natural metaphor, weave it into section headings and key terms. When it doesn't, don't force one — a clean technical README (karpathy style) beats a bad metaphor.
 
 ---
 
