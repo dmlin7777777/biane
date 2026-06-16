@@ -10,7 +10,7 @@ description: >
   NOT for traditional project READMEs (Install/Usage/Contributing) — those are a different format.
 ---
 
-# Skill README Writer
+# 匾额 | Skill README Writer
 
 Traditional project READMEs don't work for Agent Skills. A Skill README is a **sales page** — it answers "should I install this?" in 10 seconds. The SKILL.md handles the agent; the README handles the human.
 
