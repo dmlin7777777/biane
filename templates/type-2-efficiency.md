@@ -56,10 +56,20 @@
 
 ## 它会交付什么
 <!-- Luban 手法：3 个粗体交付物 + em-dash 说明 -->
+<!-- ⚠️ Writing Principle 5：有产出就贴实物。bullet 列表是菜单，截图是上菜。
+     如果 skill 产出实物（简历/报告/代码/图表），在下方贴截图或样例。
+     🎨 用 huashu-design 做产出物截图：「截一张 [产出物名] 的效果图，展示最终交付样式」
+-->
 
 - **{{DELIVERABLE_1}}** — {{DELIVERABLE_1_DESC}}
 - **{{DELIVERABLE_2}}** — {{DELIVERABLE_2_DESC}}
 - **{{DELIVERABLE_3}}** — {{DELIVERABLE_3_DESC}}
+
+<!-- 有实物产出时，在这里贴截图：
+<div align="center">
+<img src="assets/screenshots/{{DELIVERABLE_SCREENSHOT}}.png" width="600" alt="{{DELIVERABLE_DESC}}">
+</div>
+-->
 
 ---
 

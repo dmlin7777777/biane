@@ -140,7 +140,7 @@ Fill in template placeholders, delete sections that don't apply.
 
 没有设计 skill 时的后备：Mermaid 代码块（GitHub 原生渲染）、对话示例代码块、shield.io 徽章。
 
-## 4 Writing Principles (from 35-sample research)
+## 5 Writing Principles (from 35-sample research + baogong experiment)
 
 Iron Laws say WHAT must be in the README. These principles say HOW to write it. They emerged from analyzing why the highest-performing READMEs in the dataset outperform — and are more important than any individual section checklist.
 
@@ -183,6 +183,16 @@ High-star Chinese skills share one pattern: the cultural metaphor doesn't stop a
 - paoding（庖丁）→ 解牛隐喻贯穿分析流程
 
 The metaphor is not decoration — it's a memory anchor. Readers remember "堂审四幕" long after they forget "4-Phase Pipeline." When a skill has a natural metaphor, weave it into section headings and key terms. When it doesn't, don't force one — a clean technical README (karpathy style) beats a bad metaphor.
+
+**Principle 5: 有产出就贴实物。**
+
+跨类型规则：只要 skill 产出实物（简历、PPT、报告、代码、图表），README 里必须贴产出物的截图或样例，不管它的主类型是什么。Type 1 天然做到（效果展示节），但 Type 2/3/7/8 也经常有实物产出——用 bullet 列表说"交付 X、Y、Z"远不如贴一张截图。
+
+- guizang（Type 1）：直接贴 PPT 效果截图，一目了然
+- baogong（Type 2）：核心卖点是流程，但读者也想看最终简历长什么样
+- code-review（Type 3）：展示一次真实 review 的截图比列能力清单更直观
+
+**判断方式：** 如果 skill 的 SKILL.md 里有"交付/输出/产出"类的描述，README 就必须展示实物。文字描述是菜单，截图是上菜。
 
 ---
 
