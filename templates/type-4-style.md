@@ -1,90 +1,101 @@
 <!-- Type 4: 风格/视角型 (Style) -->
-<!-- Start with hero.md content, then these sections: -->
+<!-- 标杆：Nuwa（多视角对话：Naval/Musk/Jobs）· Colleague（19.4K⭐ 情感钩子+多源蒸馏） -->
+<!-- 核心手法：读者靠"感受"决定——同一 prompt 的两种输出，差异不用解释就能体会 -->
+
+<!-- ▸ 先放 hero.md 内容 -->
 
 ---
 
-## Style Anchor
-<!-- One sentence IN the style itself, not describing the style -->
+## 风格锚点
+<!-- 一句话 IN the style 本身，不是描述 style -->
+<!-- ✅ Colleague: "Clean code isn't about following rules — it's about respecting the humans who'll read it next." -->
+<!-- ❌ "这个 skill 会让你的文字更有情感" -->
 
-{{STYLE_ANCHOR}}
+> {{STYLE_ANCHOR_IN_THE_STYLE_ITSELF}}
 
 ---
 
-## Comparison Examples
+## 对比示例
+<!-- 同一 prompt → 通用输出 vs 风格输出，至少 3 组 -->
+<!-- 用真实 prompt（读者会实际用的），不用玩具示例 -->
+<!-- Nuwa 手法：多视角展示——同一话题，不同角色/风格如何处理 -->
 
-<!-- Same prompt, generic vs styled output. At least 3. Annotate the difference. -->
+### 示例 1
 
-### Example 1
+**Prompt:** {{REALISTIC_PROMPT_1}}
 
-**Prompt:** {{PROMPT_1}}
-
-| Generic | {{STYLE_NAME}} |
+| 通用输出 | {{STYLE_NAME}} |
 |---------|---------------|
 | {{GENERIC_1}} | {{STYLED_1}} |
 
-> **Difference:** {{ANNOTATION_1}}
+> **差异点：** {{ANNOTATION_1_EXPLAIN_WHY_NOT_JUST_WHAT}}
 
-### Example 2
+### 示例 2
 
-**Prompt:** {{PROMPT_2}}
+**Prompt:** {{REALISTIC_PROMPT_2}}
 
-| Generic | {{STYLE_NAME}} |
+| 通用输出 | {{STYLE_NAME}} |
 |---------|---------------|
 | {{GENERIC_2}} | {{STYLED_2}} |
 
-> **Difference:** {{ANNOTATION_2}}
+> **差异点：** {{ANNOTATION_2}}
 
-### Example 3
+### 示例 3
 
-**Prompt:** {{PROMPT_3}}
+**Prompt:** {{REALISTIC_PROMPT_3}}
 
-| Generic | {{STYLE_NAME}} |
+| 通用输出 | {{STYLE_NAME}} |
 |---------|---------------|
 | {{GENERIC_3}} | {{STYLED_3}} |
 
-> **Difference:** {{ANNOTATION_3}}
+> **差异点：** {{ANNOTATION_3}}
+
+<!-- 差异注释要解释 WHY（为什么这样更好），不只是 WHAT（哪里不同） -->
 
 ---
 
-## Trigger Words
+## 触发方式
+<!-- 什么词/句式会激活这个风格 -->
 
-<!-- Exactly what phrases activate this style -->
-
-{{TRIGGER_WORDS}}
+{{TRIGGER_PHRASES}}
 
 ---
 
-## Install
+## 快速开始
 
 ```bash
 npx skills add {{ORG}}/{{REPO}}
 ```
 
+> 安装后对 Agent 说：「{{FIRST_USE_INSTRUCTION}}」
+
 ---
 
-## Conversation Example
+## 对话示例
 
 ```
 User: "{{EXAMPLE_USER_INPUT}}"
 
-Agent: "{{EXAMPLE_AGENT_RESPONSE}}"
+Agent: "{{EXAMPLE_AGENT_RESPONSE_IN_STYLE}}"
 ```
 
 ---
 
-## Methodology
+## 方法论
+<!-- 风格的来源、原理、框架。建立学术可信度 -->
+<!-- Colleague 手法：多数据源蒸馏——列出所有参考来源 -->
+<!-- 简单风格可融入风格锚点；多源蒸馏型独立成节 -->
 
-<!-- Sources, principles, or frameworks behind this style -->
-
-{{METHODOLOGY}}
+{{METHODOLOGY_SOURCES_AND_PRINCIPLES}}
 
 ---
 
-## When NOT to Use
+## 什么时候不该用
+<!-- 风格型最容易过度应用。明确边界 -->
 
-<!-- Style skills are easy to over-apply. Define the boundary. -->
-
-{{BOUNDARIES}}
+- {{BOUNDARY_1}}
+- {{BOUNDARY_2}}
+- {{BOUNDARY_3}}
 
 ---
 

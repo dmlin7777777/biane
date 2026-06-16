@@ -1,63 +1,87 @@
 <!-- Type 3: 能力增强型 (Capability) -->
-<!-- Start with hero.md content, then these sections: -->
+<!-- 标杆：Humanizer（33模式×B/A表=自证型参考卡片）· Code-Review（四阶段流程图+严重度颜色编码）· AddyOsmani（借口→反驳表+生命周期组织） -->
+<!-- 核心手法：模式清单本身就是推销——读者扫一遍就知道自己需不需要 -->
+
+<!-- ▸ 先放 hero.md 内容 -->
 
 ---
 
 ## {{CAPABILITY_GAP_TITLE}}
-<!-- What the agent cannot do without this skill, concretely -->
+<!-- 没有这个 skill，agent 具体做不到什么 -->
 
 {{CAPABILITY_GAP}}
 
 ---
 
-## Pattern / Capability Checklist
-
-<!-- List EVERY pattern, rule, or capability. Categorize them. This IS the pitch. -->
+## {{PATTERN_COUNT}} Patterns
+<!-- Humanizer 精髓手法：每个模式一行 Before/After，整个表格=自证型产品演示 -->
+<!-- 读者不需要截图——文字本身就是产品 -->
 
 ### {{CATEGORY_1}}
 
-| # | Pattern | Description |
-|---|---------|------------|
-| 1 | {{PATTERN_1}} | {{PATTERN_1_DESC}} |
-| 2 | {{PATTERN_2}} | {{PATTERN_2_DESC}} |
+| # | Pattern | Before | After |
+|---|---------|--------|-------|
+| 1 | **{{PATTERN_1}}** | {{BEFORE_1}} | {{AFTER_1}} |
+| 2 | **{{PATTERN_2}}** | {{BEFORE_2}} | {{AFTER_2}} |
+| 3 | **{{PATTERN_3}}** | {{BEFORE_3}} | {{AFTER_3}} |
 
 ### {{CATEGORY_2}}
 
-| # | Pattern | Description |
-|---|---------|------------|
-| 3 | {{PATTERN_3}} | {{PATTERN_3_DESC}} |
-| 4 | {{PATTERN_4}} | {{PATTERN_4_DESC}} |
+| # | Pattern | Before | After |
+|---|---------|--------|-------|
+| 4 | **{{PATTERN_4}}** | {{BEFORE_4}} | {{AFTER_4}} |
+| 5 | **{{PATTERN_5}}** | {{BEFORE_5}} | {{AFTER_5}} |
+
+### {{CATEGORY_3}}
+
+| # | Pattern | Before | After |
+|---|---------|--------|-------|
+| 6 | **{{PATTERN_6}}** | {{BEFORE_6}} | {{AFTER_6}} |
+| 7 | **{{PATTERN_7}}** | {{BEFORE_7}} | {{AFTER_7}} |
+
+<!-- 模式数量就是说服力：33 > 10 > 3。列全，分类清 -->
 
 ---
 
-## Before / After Capability Demo
+## 完整示例
+<!-- Humanizer 手法：一段完整的 Before 文本 → 完整的 After 文本 -->
+<!-- 模式表是"逐条看"，这里是"整体感受" -->
 
-<!-- "cannot do X → can do X" (not "bad → good") -->
+**Before:**
+> {{FULL_BEFORE_TEXT}}
 
-{{CAPABILITY_DEMO}}
-
----
-
-## Coverage Matrix
-
-<!-- If multi-domain, show coverage table or lifecycle diagram -->
-
-{{COVERAGE_MATRIX}}
+**After:**
+> {{FULL_AFTER_TEXT}}
 
 ---
 
-## Install + Activation
+## 覆盖矩阵
+<!-- 多领域/多阶段时用。Code-Review 手法：生命周期阶段 × 覆盖状态 -->
+<!-- AddyOsmani 手法：按开发生命周期组织而非按技术栈 -->
+
+| {{LIFECYCLE_STAGE}} | 覆盖 | 说明 |
+|---------------------|:----:|------|
+| {{STAGE_1}} | ✅ | {{STAGE_1_DESC}} |
+| {{STAGE_2}} | ✅ | {{STAGE_2_DESC}} |
+| {{STAGE_3}} | ⚠️ | {{STAGE_3_DESC}} |
+| {{STAGE_4}} | ❌ | {{STAGE_4_DESC}} |
+
+---
+
+## 快速开始
 
 ```bash
 npx skills add {{ORG}}/{{REPO}}
 ```
 
-{{ACTIVATION_INSTRUCTION}}
-<!-- How to know it's working -->
+> 安装后对 Agent 说：「{{ACTIVATION_INSTRUCTION}}」
+
+<!-- 能力型必须说明"怎么知道它在工作" -->
+**验证方式：** {{HOW_TO_VERIFY}}
 
 ---
 
-## Conversation Example
+## 对话示例
 
 ```
 User: "{{EXAMPLE_USER_INPUT}}"
@@ -67,15 +91,7 @@ Agent: "{{EXAMPLE_AGENT_RESPONSE}}"
 
 ---
 
-## Verification
-
-<!-- How to prove the skill works. "Looks correct" is never enough. -->
-
-{{VERIFICATION_METHOD}}
-
----
-
-## Limitations
+## 局限性
 
 - **{{LIM_1}}** — {{LIM_1_DESC}}
 - **{{LIM_2}}** — {{LIM_2_DESC}}
@@ -89,11 +105,19 @@ Agent: "{{EXAMPLE_AGENT_RESPONSE}}"
 ---
 
 <details>
-<summary><strong>Developer Docs</strong></summary>
+<summary><strong>开发文档</strong></summary>
 
 {{DEV_DOCS}}
 
 </details>
+
+<!-- Humanizer 手法：版本历史内嵌 README，反向时间序 + 模式计数 -->
+<!-- 有持续迭代的 skill 加这节：
+## 版本历史
+| 版本 | 日期 | 变更 |
+|------|------|------|
+| v{{X}} | {{DATE}} | {{CHANGE}} ({{PATTERN_COUNT}} patterns) |
+-->
 
 ---
 

@@ -1,49 +1,78 @@
 <!-- Type 5: 合集/目录型 (Collection) -->
-<!-- Start with hero.md content, then these sections: -->
+<!-- 标杆：awesome-cursorrules（40K⭐ 13类目索引）· alirezarezvani（18.2K⭐ 跨平台兼容矩阵）· travisvn（13.5K⭐ "Skills vs Other Approaches" 对比） -->
+<!-- 核心手法：扫描速度=产品质量——读者 10 秒内找到相关 skill 就成功 -->
+
+<!-- ▸ 先放 hero.md 内容 -->
 
 ---
 
-## Collection Positioning
+## 为什么是这个合集
+<!-- 一段话说清：收录什么、筛选标准、跟 awesome-* 有什么不同 -->
 
-<!-- What's curated, selection criteria. One paragraph max. -->
-
-{{POSITIONING}}
+{{COLLECTION_POSITIONING}}
 
 ---
 
-## Quality Standards
+## 质量标准
+<!-- 什么样的 skill 能入选。同时起筛选和信任双重作用 -->
 
-<!-- What earns a spot. Filters submissions AND builds trust. -->
+入选条件：
+- {{CRITERIA_1}}
+- {{CRITERIA_2}}
+- {{CRITERIA_3}}
 
-{{QUALITY_STANDARDS}}
+---
+
+## Skills vs 其他方式
+<!-- travisvn 手法：对比矩阵让读者明白"为什么用 skill 而不用 X" -->
+
+| 维度 | {{ALTERNATIVE_1}} | {{ALTERNATIVE_2}} | Agent Skills |
+|------|---|---|---|
+| {{DIM_1}} | {{ALT1_V1}} | {{ALT2_V1}} | {{SKILLS_V1}} |
+| {{DIM_2}} | {{ALT1_V2}} | {{ALT2_V2}} | {{SKILLS_V2}} |
+
+<!-- 没有对比必要时删除这节 -->
 
 ---
 
 ## {{CATEGORY_1}}
+<!-- Trail of Bits 手法：类目标题 + 双列表，每条 what AND why -->
 
-| Skill | Description |
-|-------|------------|
-| [{{ORG}}/{{REPO}}]({{URL}}) | {{WHAT_AND_WHY}} |
+| Skill | 说明 |
+|-------|------|
+| [{{ORG_1}}/{{REPO_1}}]({{URL_1}}) | {{WHAT_IT_DOES}} — {{WHY_IT_MATTERS}} |
+| [{{ORG_2}}/{{REPO_2}}]({{URL_2}}) | {{WHAT}} — {{WHY}} |
 
 ## {{CATEGORY_2}}
 
-| Skill | Description |
-|-------|------------|
-| [{{ORG}}/{{REPO}}]({{URL}}) | {{WHAT_AND_WHY}} |
+| Skill | 说明 |
+|-------|------|
+| [{{ORG_3}}/{{REPO_3}}]({{URL_3}}) | {{WHAT}} — {{WHY}} |
 
 ## {{CATEGORY_3}}
 
-| Skill | Description |
-|-------|------------|
-| [{{ORG}}/{{REPO}}]({{URL}}) | {{WHAT_AND_WHY}} |
+| Skill | 说明 |
+|-------|------|
+| [{{ORG_4}}/{{REPO_4}}]({{URL_4}}) | {{WHAT}} — {{WHY}} |
 
-<!-- Each entry: what AND why. Bad: "A data skill." Good: "Cleans CSVs — catches the encoding errors pandas silently ignores." -->
+<!-- 每条必须说 what AND why。❌ "A data skill." ✅ "清洗 CSV — 捕捉 pandas 静默忽略的编码错误" -->
+<!-- 按领域/功能分类，不按字母排列 -->
 
 ---
 
-## Install Guide
+## 兼容性
+<!-- alirezarezvani 手法：跨平台兼容矩阵 -->
 
-<!-- How to install skills from this collection -->
+| Agent/平台 | 支持 |
+|-----------|:----:|
+| Claude Code | ✅ |
+| Codex CLI | ✅ |
+| Gemini CLI | ⚠️ |
+| Cursor | ✅ |
+
+---
+
+## 安装
 
 ```bash
 npx skills add {{ORG}}/{{SKILL_NAME}}
@@ -51,11 +80,9 @@ npx skills add {{ORG}}/{{SKILL_NAME}}
 
 ---
 
-## Contributing
+## 贡献指南
 
-<!-- Submission process and standards -->
-
-{{CONTRIBUTION_GUIDE}}
+{{CONTRIBUTION_PROCESS}}
 
 ---
 

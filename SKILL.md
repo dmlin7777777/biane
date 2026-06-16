@@ -134,6 +134,23 @@ The hero block encodes the universal layer all types share:
 
 Fill in template placeholders, delete sections that don't apply.
 
+## Visual Toolkit（视觉素材制作）
+
+人是视觉动物。截图 > 描述，GIF > 说明书，信息图 > 表格文字。README 里每个"放截图"的位置都应该真的有截图。
+
+详细制作指南见 [references/visual-toolkit.md](references/visual-toolkit.md)，核心工具链：
+
+| 场景 | 推荐 Skill | 产出 |
+|------|-----------|------|
+| 产品截图/对比信息图/流程 GIF | `huashu-design` | HTML→截图/GIF/MP4 |
+| 流程图/架构图 | `excalidraw-diagram` | .excalidraw + PNG |
+| 数据图表 | `show_widget`（内置） | SVG 内联 |
+| 品牌海报/头图 | `canvas-design` | PNG/PDF |
+
+**工作流：** 先用模板写完文字 → 标记 `<!-- TODO: 视觉素材 -->` → 调用对应 skill 批量制作 → 替换占位符。
+
+没有设计 skill 时的后备：Mermaid 代码块（GitHub 原生渲染）、对话示例代码块、shield.io 徽章。
+
 ## 4 Writing Principles (from 35-sample research)
 
 Iron Laws say WHAT must be in the README. These principles say HOW to write it. They emerged from analyzing why the highest-performing READMEs in the dataset outperform — and are more important than any individual section checklist.
