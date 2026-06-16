@@ -44,7 +44,7 @@
 
 <!-- ❌ 避免：上下顺序排列无视觉分隔——读者无法对比看不到的东西 -->
 
-<!-- 🎨 升级方式（详见 references/visual-toolkit.md）：
+<!-- 🎨 升级方式（详见 ../references/visual-toolkit.md）：
      文字表格只是及格线。更强的 B/A 展示：
      1. 信息图 → 用 huashu-design：「做一张 Before/After 对比信息图，左边 [旧方式] 右边 [新方式]，并排布局，用红绿色差」
      2. 截图 diff → 真实截图标注差异（红框/箭头）

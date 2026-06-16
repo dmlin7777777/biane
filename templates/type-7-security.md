@@ -67,7 +67,7 @@
 
 ## 漏洞类型覆盖
 <!-- code-audit 手法：列出所有检测的漏洞类型，数量=说服力 -->
-<!-- 🎨 升级方式（详见 references/visual-toolkit.md）：
+<!-- 🎨 升级方式（详见 ../references/visual-toolkit.md）：
      1. 多 Agent 架构 → 用 excalidraw-diagram 画架构图（claude-cybersecurity 手法：8-agent 并行扫描）
      2. 标准覆盖 → 用 show_widget 做覆盖率热力图
      3. 漏洞类型 → 用 huashu-design 做分类信息图

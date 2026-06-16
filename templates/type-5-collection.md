@@ -37,6 +37,13 @@
 
 ## {{CATEGORY_1}}
 <!-- Trail of Bits 手法：类目标题 + 双列表，每条 what AND why -->
+<!-- 🎨 升级方式（详见 ../references/visual-toolkit.md）：
+     纯表格是及格线。更强的目录展示：
+     1. 用 huashu-design 做 skill 卡片网格（daymade 手法：每个 skill 配缩略图/GIF + 一句话说明）
+     2. 分类导航 → 用 excalidraw-diagram 画类目关系图/思维导图
+     3. 对比矩阵 → 用 show_widget 做交互式筛选表（按平台/领域/星数筛选）
+     4. 后备 → 表格 + emoji 类目标记已够用
+-->
 
 | Skill | 说明 |
 |-------|------|

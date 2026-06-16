@@ -40,6 +40,13 @@
 | 7 | **{{PATTERN_7}}** | {{BEFORE_7}} | {{AFTER_7}} |
 
 <!-- 模式数量就是说服力：33 > 10 > 3。列全，分类清 -->
+<!-- 🎨 升级方式（详见 ../references/visual-toolkit.md）：
+     纯文字 B/A 表是及格线。更强的能力展示：
+     1. 用 huashu-design 做模式分类信息图（类别色块+模式数量+代表性 B/A）
+     2. 覆盖矩阵 → 用 excalidraw-diagram 画生命周期覆盖图（code-review 手法：颜色编码严重度）
+     3. 完整示例 → 用 huashu-design 做 diff 可视化（红删绿加，比引用块直观）
+     4. 后备 → Mermaid 流程图展示模式检测流程
+-->
 
 ---
 

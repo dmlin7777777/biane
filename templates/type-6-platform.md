@@ -68,7 +68,7 @@
 
 ## Skill 展示
 <!-- daymade 精髓手法：每个 skill 配 GIF/截图 demo 卡片，README 本身=可浏览的市场 -->
-<!-- 🎨 制作方式（详见 references/visual-toolkit.md）：
+<!-- 🎨 制作方式（详见 ../references/visual-toolkit.md）：
      1. 用 huashu-design 为每个 skill 做 GIF demo：
         「用 huashu-design 做一个 8 秒动画，演示 [skill名] 的核心流程：[步骤1]→[步骤2]→[结果]，导出 GIF」
      2. 没有 huashu-design → 用录屏工具录制真实使用过程

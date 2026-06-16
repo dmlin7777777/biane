@@ -23,7 +23,7 @@
 
 ## 工作流示例
 <!-- academic-research 精髓手法：完整端到端 pipeline，不是功能演示 -->
-<!-- 🎨 升级方式（详见 references/visual-toolkit.md）：
+<!-- 🎨 升级方式（详见 ../references/visual-toolkit.md）：
      表格流水线只是及格线。更强的展示：
      1. 用 excalidraw-diagram 画 pipeline 流程图（标注人工审核点）
      2. 用 huashu-design 做每步的产出截图序列

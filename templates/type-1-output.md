@@ -24,7 +24,7 @@
 <!-- 占首屏 40-60%。真实产出截图/GIF，不是文字描述 -->
 
 <!-- Guizang 手法：在表格单元格里嵌入 <img> 缩略图，把 README 变成可浏览的产品画廊 -->
-<!-- 🎨 制作方式（详见 references/visual-toolkit.md）：
+<!-- 🎨 制作方式（详见 ../references/visual-toolkit.md）：
      1. 有真实产出 → 直接截图放 assets/screenshots/
      2. 没有真实截图 → 用 huashu-design 生成效果图：
         「用 huashu-design 做一组产品截图画廊，展示 [产品名] 的 [N 种变体]，瑞士极简风，每张 800×600」

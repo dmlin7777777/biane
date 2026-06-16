@@ -114,20 +114,9 @@ NOT: `from skill import analyze_jd; result = analyze_jd("job.pdf")`
 
 ## Universal Structure (all types)
 
-Every README starts with the hero block from [templates/hero.md](templates/hero.md), then follows the type-specific template:
+Every README starts with the hero block from [templates/hero.md](templates/hero.md), then follows the type-specific template（每个 Type card 的 **Template** 行指向对应模板）。
 
-| Type | Template |
-|------|----------|
-| 1 Output | [templates/type-1-output.md](templates/type-1-output.md) |
-| 2 Efficiency | [templates/type-2-efficiency.md](templates/type-2-efficiency.md) |
-| 3 Capability | [templates/type-3-capability.md](templates/type-3-capability.md) |
-| 4 Style | [templates/type-4-style.md](templates/type-4-style.md) |
-| 5 Collection | [templates/type-5-collection.md](templates/type-5-collection.md) |
-| 6 Platform | [templates/type-6-platform.md](templates/type-6-platform.md) |
-| 7 Security | [templates/type-7-security.md](templates/type-7-security.md) |
-| 8 Science | [templates/type-8-science.md](templates/type-8-science.md) |
-
-The hero block encodes the universal layer all types share:
+Hero block encodes the universal layer all types share:
 1. **Hero block** — centered title + optional brand quote + badge row + hero positioning sentence
 2. **Badge row** — version, license, Agent Skills, skills.sh, runtime compatibility. Add stars badge once repo has traction
 3. **Hero positioning** — 1-2 sentences following the rules in Step 2 (specific action chain, most differentiating capability first)
@@ -200,18 +189,9 @@ The metaphor is not decoration — it's a memory anchor. Readers remember "堂�
 ## Type 1: 作品产出型 (Output)
 
 **Decision question:** "What does this produce? Show me."
-**ONE proof:** A real output screenshot or demo that takes 40-60% of first screen. Reader decides by seeing, not reading. Everything else supports this.
+**ONE proof:** A real output screenshot or demo that takes 40-60% of first screen. Reader decides by seeing, not reading.
 **Proof format:** Full-width screenshots, GIFs, or rendered conversation output.
-
-**Mandatory sections (in order):**
-1. **Hook** — one sentence: storytelling, direct, or emotional
-2. **Effect proof** — 40-60% of first screen. Real output, not descriptions. Must appear BEFORE install. If no screenshots, use visual anchor descriptions + conversation examples
-3. **Install + first use** — one command to install, one line to send to agent
-4. **Deliverables** — output formats and quality guarantees
-5. **Limitations** — what it cannot produce, what it might get wrong
-6. **Examples** — at least 2, showing different styles/use cases
-
-Optional: style variation thumbnails, star history chart, naming ritual for process steps.
+**Template:** [templates/type-1-output.md](templates/type-1-output.md)
 
 **Anti-patterns:** describing output in text instead of showing it · tiny thumbnails · install after philosophy
 
@@ -228,22 +208,9 @@ Optional: style variation thumbnails, star history chart, naming ritual for proc
 ## Type 2: 提效/流程型 (Efficiency)
 
 **Decision question:** "How much better/faster is this than what I do now?"
-**ONE proof:** A Before/After comparison that makes the improvement undeniable in one glance. This single comparison does 80% of the convincing.
+**ONE proof:** A Before/After comparison that makes the improvement undeniable in one glance.
 **Proof format:** Side-by-side table (preferred), diff, numbers table, or competitor comparison.
-
-**Mandatory sections (in order):**
-1. **Pain point hook** — rhetorical question or direct attack that makes reader feel the pain
-2. **Before/After comparison** — the most important section. Choose the right form:
-   - **Side-by-side table** (default) — columns: Before | After, rows: specific metrics. Best scannability
-   - **Numbers table** — from X → Y, saving Z. Best for quantifiable improvements
-   - **Competitor comparison table** — columns: Old Way | This Skill. Best for method displacement
-   - **Diff format** — red/green or strikethrough. Best for text transformation
-   - Avoid: sequential top-bottom blocks without visual separation — readers can't compare what they can't see simultaneously
-3. **Install + first use** — one command, one agent instruction
-4. **Process visualization** — workflow as table, diagram, or numbered steps
-5. **Quantitative proof** — real numbers from real usage, or specific case studies with measurable outcomes
-6. **Trust system** — safeguards, limits, failure modes. Efficiency skills need trust most
-7. **Limitations** — honest trade-offs (tokens, model requirements, failure modes)
+**Template:** [templates/type-2-efficiency.md](templates/type-2-efficiency.md)
 
 **Anti-patterns:** "80% better" without showing what that means · B/A that looks like rephrasing · no quantitative evidence · trust system missing
 
@@ -260,16 +227,9 @@ Optional: style variation thumbnails, star history chart, naming ritual for proc
 ## Type 3: 能力增强型 (Capability)
 
 **Decision question:** "What can my agent do now that it couldn't before?"
-**ONE proof:** The categorized pattern/capability checklist. When readers see the full list of what you detect/transform, they self-assess whether they need it. The list IS the pitch.
+**ONE proof:** The categorized pattern/capability checklist. The list IS the pitch — readers scan it and self-assess.
 **Proof format:** Categorized pattern/capability list + before/after capability demo.
-
-**Mandatory sections (in order):**
-1. **Capability gap** — what the agent cannot do without this skill, concretely
-2. **Pattern/capability checklist** — list every pattern, rule, or capability added. Categorize them. This is the strongest weapon for this type
-3. **Before/After capability demo** — "cannot do X → can do X" (not "bad → good")
-4. **Coverage matrix** — if multi-domain, show coverage table or lifecycle diagram
-5. **Install + activation** — how to install AND how to know it's working
-6. **Verification mechanism** — capability skills must prove they work. "Looks correct" is never enough
+**Template:** [templates/type-3-capability.md](templates/type-3-capability.md)
 
 **Anti-patterns:** abstract descriptions without demos · missing pattern checklist · no verification method
 
@@ -286,17 +246,9 @@ Optional: style variation thumbnails, star history chart, naming ritual for proc
 ## Type 4: 风格/视角型 (Style)
 
 **Decision question:** "What does it sound like? Let me feel the difference."
-**ONE proof:** Side-by-side text comparison — same prompt, generic vs styled output. The reader FEELS the difference without being told. If this comparison doesn't land, nothing else will.
+**ONE proof:** Side-by-side text comparison — same prompt, generic vs styled output. The reader FEELS the difference. If this doesn't land, nothing else will.
 **Proof format:** Same prompt → generic output vs styled output, side by side.
-
-**Mandatory sections (in order):**
-1. **Style anchor** — one sentence IN the style itself, not describing the style
-2. **3 comparison examples** — same prompt, generic vs styled output, with brief annotation explaining the difference
-3. **Trigger words** — exactly what phrases activate this style
-4. **Methodology** — sources, principles, or frameworks. Builds credibility. Weave into Style anchor for simple styles; standalone section for multi-source distillations
-5. **When NOT to use** — style skills are easy to over-apply. Define the boundary
-
-Good comparisons use realistic prompts the reader would actually use, and annotate the difference rather than just showing it.
+**Template:** [templates/type-4-style.md](templates/type-4-style.md)
 
 **Anti-patterns:** describing style in adjectives without showing it · toy examples · no methodology
 
@@ -313,19 +265,11 @@ Good comparisons use realistic prompts the reader would actually use, and annota
 ## Type 5: 合集/目录型 (Collection)
 
 **Decision question:** "What skills are available? Help me browse and choose."
-**ONE proof:** The categorized listing itself — its scan speed IS the product quality. If a reader can find a relevant skill in 10 seconds, the README works.
+**ONE proof:** The categorized listing itself — scan speed IS the product quality. 10 秒内找到相关 skill 就成功。
 **Proof format:** Categorized tables with functional one-line descriptions.
+**Template:** [templates/type-5-collection.md](templates/type-5-collection.md)
 
 For skill COLLECTIONS and awesome-lists, not individual skills.
-
-**Mandatory sections (in order):**
-1. **Collection positioning** — what's curated, selection criteria. One paragraph max
-2. **Quality standards** — what earns a spot. Filters submissions AND builds trust
-3. **Categorized listing** — by domain/provider, not tech stack. Each entry: `[org/repo](link) — what AND why`
-4. **Install guide** — how to install skills from this collection
-5. **Contribution guide** — submission process and standards
-
-Good one-liner: tells what AND why. Bad: "A collection of skills." Worse: "Revolutionary AI-powered ecosystem."
 
 **Anti-patterns:** alphabetical without categories · entries without descriptions · no quality standards
 
@@ -342,17 +286,11 @@ Good one-liner: tells what AND why. Bad: "A collection of skills." Worse: "Revol
 ## Type 6: 平台/工具型 (Platform)
 
 **Decision question:** "How do I manage/install/organize skills?"
-**ONE proof:** The one-command quickstart. If the reader can copy-paste one line and it works, trust is established. Everything after is progressive disclosure.
+**ONE proof:** The one-command quickstart. Copy-paste 能跑 = 信任建立完成。
 **Proof format:** Copy-pasteable commands + compatibility matrix.
+**Template:** [templates/type-6-platform.md](templates/type-6-platform.md)
 
 For CLI tools, package managers, and platforms that handle skills.
-
-**Mandatory sections (in order):**
-1. **One-command quickstart** — one copy-paste line, must work, must be in first screen
-2. **Installation methods** — all supported ways, ordered by simplicity
-3. **Core commands** — scannable table (install, list, search, remove, validate)
-4. **Compatibility** — agents, runtimes, platforms supported. Core trust point
-5. **Progressive disclosure** — quick start → common workflows → advanced → create your own
 
 **Anti-patterns:** architecture diagrams before commands · "revolutionary platform" language · buried compatibility
 
@@ -369,15 +307,9 @@ For CLI tools, package managers, and platforms that handle skills.
 ## Type 7: 安全/专业领域型 (Security)
 
 **Decision question:** "Can I trust this in my critical workflow?"
-**ONE proof:** The trophy case — real findings, real bugs caught, real vulnerabilities discovered. "I claim to detect X" vs "I have detected X, here's the CVE." Casual tone works AGAINST you here — precision IS the marketing.
+**ONE proof:** The trophy case — real findings, real bugs caught. "I have detected X, here's the CVE" vs "I claim to detect X." Precision IS the marketing.
 **Proof format:** Trophy case (real findings) + verb-driven capability list + standards coverage.
-
-**Mandatory sections (in order):**
-1. **Domain positioning** — specific problem, precise technical terms. No marketing language
-2. **Trophy case** — real findings, bugs caught, vulnerabilities discovered. Converts "I claim" into "I have proven"
-3. **Verb-driven capability list** — Detect, Audit, Identify, Analyze, Prevent. Each verb → one concrete capability
-4. **Standards/endorsement** — compliance badges, OWASP/ASVS coverage, certification references
-5. **Install + scope** — how to install AND what it will/won't touch. Define boundary precisely
+**Template:** [templates/type-7-security.md](templates/type-7-security.md)
 
 **Anti-patterns:** casual tone or emoji · "trust me" without results · vague "helps with security" · no scope definition
 
@@ -394,15 +326,9 @@ For CLI tools, package managers, and platforms that handle skills.
 ## Type 8: 科学/研究型 (Science)
 
 **Decision question:** "What complex workflows does this unlock for my research?"
-**ONE proof:** A complete end-to-end workflow example — from research question to final output. Researchers evaluate by "can this do MY pipeline?", not by feature counts.
+**ONE proof:** A complete end-to-end workflow example — research question to final output. Researchers evaluate by "can this do MY pipeline?"
 **Proof format:** Domain matrix + end-to-end pipeline examples + institutional/usage proof.
-
-**Mandatory sections (in order):**
-1. **Domain matrix** — emoji + category + skill count. Communicates breadth instantly
-2. **Workflow examples** — 2-3 COMPLETE end-to-end pipelines (not feature demos). Each: research question → steps → output
-3. **Expectation management** — "accelerator, not replacement." Preempt the "can it do my PhD?" question
-4. **Install + domain activation** — how to install AND activate specific domain capabilities
-5. **Social proof** — scientist count, citations, institutional affiliation
+**Template:** [templates/type-8-science.md](templates/type-8-science.md)
 
 **Anti-patterns:** features without workflows · "AI-powered" hype · missing expectation management · no domain categorization
 
