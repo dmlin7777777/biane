@@ -73,7 +73,7 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 
 ## 产出示例：baogong-skill README 重写
 
-用 Type 2（提效型）策略重写了 [baogong-skill](https://github.com/LearnPrompt/baogong-skill) 的 README：
+用 Type 2（提效型）策略重写了 [baogong-skill](https://github.com/dmlin7777777/baogong-skill) 的 README：
 
 | 维度 | 原 README | Type 2 策略重写后 |
 |------|----------|-----------------|
@@ -131,7 +131,7 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 "看能解锁什么复杂工作流"       → Type 8  科学/研究型  → 完整多步骤工作流
 ```
 
-8 种类型 × 7 项必选内容速查表已内置在 SKILL.md 中。
+8 种类型 × 8 项铁律速查表已内置在 SKILL.md 中。
 
 | 类型 | 标杆 Skill | 学什么 |
 |------|-----------|--------|
@@ -148,9 +148,9 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 
 ---
 
-## 7 条通用铁律
+## 8 条通用铁律
 
-不管你是什么类型，以下 7 条没有例外：
+不管你是什么类型，以下 8 条没有例外：
 
 1. **首屏 10 秒内回答「要不要装」** — 钩子 + 效果证明 + 安装命令必须在第一屏
 2. **安装命令必须在首屏滚动范围内** — 读者不能翻页才能装
@@ -159,6 +159,7 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 5. **诚实 > 吹嘘** — 每个标杆 README 都有 Limitations 章节
 6. **攻击锚点必须点名** — 「比传统做法更好」没用。「点名批评 AI 空泛形容词堆砌」有用
 7. **徽章矩阵是最便宜的社会认同** — License + skills.sh 状态 + GitHub stars 是最低配置
+8. **情感连接打开逻辑关不上的门** — 功能列表说「它做什么」，起源故事说「你为什么造它」——后者才让人在意
 
 ---
 
@@ -224,9 +225,9 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 
 这个 Skill 的方法论建立在以下仓库的 README 分析之上：
 
-**提效型标杆** — [baogong-skill](https://github.com/LearnPrompt/baogong-skill)（铡刀门 + Before/After）、[luban-skill](https://github.com/LearnPrompt/luban-skill)（数字轰炸 + 反问共情）、[paoding-skill](https://github.com/LearnPrompt/paoding-skill)（痛点场景 + 对称句式）
+**提效型标杆** — [baogong-skill](https://github.com/dmlin7777777/baogong-skill)（铡刀门 + Before/After）、[luban-skill](https://github.com/LearnPrompt/luban-skill)（数字轰炸 + 反问共情）、[paoding-skill](https://github.com/LearnPrompt/paoding-skill)（痛点场景 + 对称句式）
 
-**产出型标杆** — [guizang-ppt-skill](https://github.com/LearnPrompt/guizang-ppt-skill)（截图主导 + 30 秒开始）、[nuwa-skill](https://github.com/LearnPrompt/nuwa-skill)（故事叙事 + 诚实边界）、[cailun-skill](https://github.com/LearnPrompt/cailun-skill)（七纸展示 + 命名仪式）
+**产出型标杆** — [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)（截图主导 + 30 秒开始）、[nuwa-skill](https://github.com/alchaincyf/nuwa-skill)（故事叙事 + 诚实边界）、[cailun-skill](https://github.com/LearnPrompt/cailun-skill)（七纸展示 + 命名仪式）
 
 **生态调研** — 22 个样本覆盖 Anthropic / Vercel / ComposioHQ / VoltAgent / trailofbits / K-Dense-AI 等仓库
 
