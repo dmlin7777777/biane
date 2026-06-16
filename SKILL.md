@@ -114,10 +114,12 @@ NOT: `from skill import analyze_jd; result = analyze_jd("job.pdf")`
 
 ## Universal Structure (all types)
 
-Before any type-specific section, every README starts with:
+Use [templates/readme-skeleton.md](templates/readme-skeleton.md) as starting point. It includes the hero layout, badge row, section order, and type-specific comments. Fill in placeholders, delete sections that don't apply.
 
-1. **Title + badge row** — skill name as H1, then badges (version, license, stars if applicable). Badges = first social proof signal (Iron Law 7)
-2. **One-line positioning** — what this skill does, in one sentence. Comes from the skill's `description` field
+The skeleton encodes the universal layer that all types share:
+1. **Hero block** — centered title + optional brand quote + badge row + hero positioning sentence
+2. **Badge row** — version, license, Agent Skills, skills.sh, runtime compatibility. Add stars badge once repo has traction
+3. **Hero positioning** — 1-2 sentences following the rules in Step 2 (specific action chain, most differentiating capability first)
 
 Then proceed to the type card's Mandatory sections (Hook, Proof, etc.).
 
