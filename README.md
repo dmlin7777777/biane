@@ -52,7 +52,7 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 | **首屏钩子** | 项目名 + 一句话简介，然后陷入功能罗列 | 类型匹配的钩子（反问共情 / 故事叙事 / 风格锚点） |
 | **信任建立** | "欢迎 Star / PR / Issue" | 诚实边界 + 攻击锚点点名 + 量化证明 |
 | **差异化** | 没说和同类有什么不同 | 竞品对比表 + 攻击锚点（"别的工具给你润色。包公开堂——一条龙审完"） |
-| **参考基准** | 凭感觉写 | 22 个样本调研 + 每个类型的标杆 README 参考 |
+| **参考基准** | 凭感觉写 | 35 个样本调研 + 每个类型的标杆 README 参考 |
 
 **具体来说：**
 
@@ -136,15 +136,15 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 | 类型 | 标杆 Skill | 学什么 |
 |------|-----------|--------|
 | **产出型** | `guizang-ppt-skill` `nuwa-skill` `cailun-skill` | 截图主导首屏 / 故事叙事钩子 / 命名仪式感 |
-| **提效型** | `baogong-skill` `luban-skill` `paoding-skill` | Before/After 对比 / 数字轰炸 / 痛点反问 |
-| **能力型** | `humanizer` `addyosmani/agent-skills` | 24 模式 5 分类 / 生命周期组织 |
+| **提效型** | `baogong-skill` `luban-skill` `karpathy-skills` | Before/After 对比 / 数字轰炸 / 极简规则映射（176K⭐ 验证） |
+| **能力型** | `humanizer` `code-review-skill` `addyosmani/agent-skills` | 模式清单 / 四阶段流程 + 严重性颜色编码 / 生命周期组织 |
 | **风格型** | `nuwa-skill` `colleague-skill` | 生成文本对比 / 情感钩子 |
-| **合集型** | `VoltAgent/awesome` `heilcheng/awesome` | 供应商分类 / 入选标准前置 |
-| **平台型** | `vercel-labs/skills` | `npx` 一键上手 + 渐进式披露 |
-| **安全型** | `trailofbits/skills` | 战绩墙 + 动词驱动描述 |
-| **科学型** | `K-Dense-AI/claude-scientific-skills` | 领域矩阵 + 16 领域 × 6 工作流 |
+| **合集型** | `awesome-cursorrules` `alirezarezvani/claude-skills` `travisvn/awesome` | 13 大类索引 / 跨平台兼容矩阵 / Skills vs Other 对比 |
+| **平台型** | `vercel-labs/skills` `daymade/claude-code-skills` | `npx` 一键上手 / marketplace-as-README（每 skill 配 GIF） |
+| **安全型** | `trailofbits/skills` `code-audit` `claude-code-owasp` | 战绩墙 / 反幻觉方法论 / OWASP 标准覆盖矩阵 |
+| **科学型** | `academic-research-skills` `K-Dense-AI` `Stanford REAP` | 4 skill 流水线 / 领域矩阵 / 机构背书 + "自己验证" |
 
-> 全部 22 样本的详细分析见 [references/research-data.md](references/research-data.md)。
+> 全部 35 样本的详细分析见 [references/research-data.md](references/research-data.md)。
 
 ---
 
@@ -167,7 +167,7 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 
 | 指标 | 数据 |
 |------|------|
-| 调研样本 | 22 个 Skill 仓库/单品 |
+| 调研样本 | 35 个 Skill 仓库/单品 |
 | 覆盖类型 | 8 种（产出 / 提效 / 能力 / 风格 / 合集 / 平台 / 安全 / 科学） |
 | 测试用例 | 7 个（4 类型判断 + 3 写作质量） |
 | 实测通过率 | **7/7 = 100%**（含边界歧义和无法归类两个压力 case） |
@@ -215,7 +215,7 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 
 ## 限制
 
-- **Skill 尚新**（2026-06 创建），实战战绩中的"22 样本 / 550 行 / 7/7 pass"是结构性指标和测试数据，非大规模外部用户使用数据
+- **Skill 尚新**（2026-06 创建），实战战绩中的"35 样本 / 550 行 / 7/7 pass"是结构性指标和测试数据，非大规模外部用户使用数据
 - Type 5-8（合集 / 平台 / 安全 / 科学）的样本量相对少（每类 1-3 个），策略覆盖率低于 Type 1-4
 - 无法自动截图——对于 Output 型 Skill，如果用户没有提供截图，Agent 会使用视觉锚点描述替代（效果不如真实截图）
 
@@ -229,7 +229,7 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 
 **产出型标杆** — [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)（截图主导 + 30 秒开始）、[nuwa-skill](https://github.com/alchaincyf/nuwa-skill)（故事叙事 + 诚实边界）、[cailun-skill](https://github.com/LearnPrompt/cailun-skill)（七纸展示 + 命名仪式）
 
-**生态调研** — 22 个样本覆盖 Anthropic / Vercel / ComposioHQ / VoltAgent / trailofbits / K-Dense-AI 等仓库
+**生态调研** — 35 个样本覆盖 Anthropic / Vercel / ComposioHQ / VoltAgent / trailofbits / K-Dense-AI / Stanford REAP / PatrickJS 等仓库
 
 ---
 

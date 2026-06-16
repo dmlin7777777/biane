@@ -1,8 +1,8 @@
-# Skill README 调研数据集（22 样本）
+# Skill README 调研数据集（35 样本）
 
 > **数据校验日期：2026-06-16**
-> 初版由 Claude Sonnet 4 调研（2026-06-15），Opus 4.6 于 2026-06-16 逐一 WebFetch 验证 GitHub 仓库。
-> 修正：6 个错误 org/repo 名、1 个错标"无 README"、3 处描述低估。
+> 第一轮：Claude Sonnet 4 调研（2026-06-15），Opus 4.6 于 2026-06-16 逐一 WebFetch 验证，修正 6 个错误 org/repo 名、1 个错标"无 README"、3 处描述低估。
+> 第二轮：Opus 4.6 于 2026-06-16 扩充 13 个新样本，重点补强 Security（+3）、Science（+3）、Platform（+2）、Collection（+3）、Capability（+1）、Efficiency（+1）类型。全部 GitHub URL 经 WebFetch 验证。
 
 ## 样本清单
 
@@ -22,6 +22,7 @@
 | 7 | paoding-skill | LearnPrompt | [LearnPrompt/paoding-skill](https://github.com/LearnPrompt/paoding-skill) | ~450 | 痛点场景 + 对称句式 + 零 API | 数字 + 竞品对比 + badges |
 | 8 | diagnose | 用户本地 | — | — | 仅 SKILL.md | 需要补 Before/After |
 | 9 | caveman | 用户本地 | — | — | 仅 SKILL.md | 需要补对话对比 |
+| 23 | andrej-karpathy-skills | forrestchang | [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) | ~400 | 176K⭐ · 4 条原则（Think→Simplify→Surgical→Goal-driven）| 极简反模式：无 badge、无 B/A、纯问题→规则映射，靠 Karpathy 个人品牌 + 共鸣痛点驱动安装 |
 
 ### 能力增强型
 | # | Skill | 仓库 | GitHub URL | README 行数 | 核心策略 | 效果展示形式 |
@@ -29,6 +30,7 @@
 | 10 | humanizer | blader | [blader/humanizer](https://github.com/blader/humanizer) | ~450 | 33 模式清单（原 24，已扩展）+ Before/After | 5 大类分类 + 每模式 Before/After 表 + 完整文章级示例 |
 | 11 | self-improving-agent | pskoett（原作）→ skillhub 分发 | [pskoett/pskoett-ai-skills](https://github.com/pskoett/pskoett-ai-skills/tree/main/skills/self-improvement) | 短 | OpenClaw 自改进机制 | README 极简，主要靠 SKILL.md |
 | 12 | addyosmani/agent-skills | addyosmani | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | ~600 | 24 技能按生命周期组织 | 借口→反驳表 + 支持 7+ IDE |
+| 24 | code-review-skill | awesome-skills | [awesome-skills/code-review-skill](https://github.com/awesome-skills/code-review-skill) | ~800 | 1K⭐ · 中英双语 + 四阶段流程图 + 颜色编码严重性标签 | 20+ 语言框架覆盖 + 渐进加载（核心 190 行，语言指南按需加载）+ 16,000+ 行审查规则 |
 
 ### 合集/目录型
 | # | Skill | 仓库 | GitHub URL | README 行数 | 核心策略 |
@@ -38,22 +40,33 @@
 | 15 | ComposioHQ/awesome-claude-skills | ComposioHQ | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | 2000+ | 10 大类 + 78 个预置工作流 |
 | 16 | github/awesome-copilot | GitHub | [github/awesome-copilot](https://github.com/github/awesome-copilot) | 大型 | 35.1K stars · agents/instructions/skills/plugins/hooks/workflows |
 | 17 | csfuwwc/md-skills | csfuwwc | [csfuwwc/md-skills](https://github.com/csfuwwc/md-skills) | 短 | 8 个 skill 按分类展示 |
+| 25 | awesome-cursorrules | PatrickJS | [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) | 1500+ | 40K⭐ · 13 大类 200+ cursor rules · "Why Cursor Rules" 价值主张段 |
+| 26 | claude-skills (337) | alirezarezvani | [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | 1200+ | 18.2K⭐ · 345 个 skill · 17 域分类 · 跨平台兼容矩阵（Claude/Codex/Gemini CLI 等） |
+| 27 | awesome-claude-skills | travisvn | [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | 1500+ | 13.5K⭐ · "Skills vs Other Approaches" 对比矩阵 + 安全最佳实践章节 + 渐进披露架构说明 |
 
 ### 平台/工具型
 | # | Skill | 仓库 | GitHub URL | README 行数 | 核心策略 |
 |---|-------|------|-----------|------------|---------|
 | 18 | vercel-labs/skills | Vercel | [vercel-labs/skills](https://github.com/vercel-labs/skills) | ~800 | npx 一行上手 + 渐进披露 + 兼容性矩阵 |
 | 19 | agentskills/agentskills | AgentSkills | [agentskills/agentskills](https://github.com/agentskills/agentskills) | ~100 | 技能规范定义 + agentskills.io 链接 |
+| 28 | claude-code-skills | daymade | [daymade/claude-code-skills](https://github.com/daymade/claude-code-skills) | 8000+ | 1.2K⭐ · 64+ skill 的 marketplace-as-README：每个 skill 配 GIF demo + "When to use / Key features" 卡片 |
+| 29 | agent-sandbox-skill | disler | [disler/agent-sandbox-skill](https://github.com/disler/agent-sandbox-skill) | ~450 | 375⭐ · 难度分级 starter prompts（Very Easy→Very Hard）作为上手坡道 + E2B 沙箱隔离执行 |
 
 ### 安全/专业领域型
 | # | Skill | 仓库 | GitHub URL | README 行数 | 核心策略 |
 |---|-------|------|-----------|------------|---------|
 | 20 | trailofbits/skills | Trail of Bits | [trailofbits/skills](https://github.com/trailofbits/skills) | ~300 | Trophy Case + 动词驱动描述 + 10 领域分类 |
+| 30 | code-audit | 3stoneBrother | [3stoneBrother/code-audit](https://github.com/3stoneBrother/code-audit) | ~500 | 750⭐ · 反幻觉方法论章节 + 双轨审计模型 + 55+ 漏洞类型 + 9 语言 14 框架覆盖 |
+| 31 | claude-code-owasp | agamm | [agamm/claude-code-owasp](https://github.com/agamm/claude-code-owasp) | ~250 | 234⭐ · 标准覆盖矩阵（OWASP Top 10:2025 + ASVS 5.0）+ 语言特定安全 quirks 表 |
+| 32 | claude-cybersecurity | AgriciDaniel | [AgriciDaniel/claude-cybersecurity](https://github.com/AgriciDaniel/claude-cybersecurity) | ~800 | 149⭐ · 8 并行 agent 架构图 + vs GitHub Advanced Security 对比表 + 评分体系可视化 |
 
 ### 科学/研究型
 | # | Skill | 仓库 | GitHub URL | README 行数 | 核心策略 |
 |---|-------|------|-----------|------------|---------|
 | 21 | K-Dense-AI/claude-scientific-skills | K-Dense | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) | 2000+ | 17 领域 emoji 分类 + 6 个工作流示例 + "160,000+ scientists" |
+| 33 | academic-research-skills | Imbad0202 | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | 大型（4 语言版本） | 31.7K⭐ · 4 skill 流水线（Deep Research→Paper→Reviewer→Pipeline）+ 人类在回路 + 反幻觉门控 |
+| 34 | Awesome-Agent-Skills-for-Empirical-Research | brycewang-stanford | [brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research](https://github.com/brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research) | 大型（5 语言版本） | 1.9K⭐ · Stanford REAP 机构背书 + 1,080 内置 skill + 23,000 外部 skill 索引 + "2 分钟自己验证" |
+| 35 | academic-paper-skills | lishix520 | [lishix520/academic-paper-skills](https://github.com/lishix520/academic-paper-skills) | ~450 | 891⭐ · 双 skill 流水线图（strategist→composer）+ 35 维审稿人模拟 + 预印本平台适配 |
 
 ### Anthropic 官方技能
 | # | Skill | 仓库 | GitHub URL | README 行数 | 核心策略 |
@@ -110,9 +123,10 @@
 | 类型 | 展示形式 | 代表案例 |
 |------|---------|---------|
 | 作品产出型 | 截图/GIF/对话示例 | guizang 多张预览截图、nuwa 分类表 + 对话 |
-| 提效/流程型 | Before/After 对比 + 数字 | baogong diff + 三色签、luban 竞品对比 + demo GIF |
-| 能力增强型 | 模式清单 + 样例 | humanizer 33 patterns + 每模式 Before/After |
+| 提效/流程型 | Before/After 对比 + 数字 | baogong diff + 三色签、luban 竞品对比 + demo GIF、**karpathy 极简反模式：纯规则映射无 B/A** |
+| 能力增强型 | 模式清单 + 样例 | humanizer 33 patterns + 每模式 Before/After、**code-review 四阶段流程图 + 严重性颜色编码** |
 | 风格/视角型 | 3 段生成文本对比 | nuwa examples 对话 |
-| 合集/目录型 | 表格 + 描述 | awesome-* repos |
-| 平台/工具型 | 命令演示 + 兼容性矩阵 | vercel-labs/skills |
-| 安全/专业型 | Trophy Case + 动词描述 | trailofbits/skills |
+| 合集/目录型 | 表格 + 描述 | awesome-* repos、**alirezarezvani 跨平台兼容矩阵**、**travisvn "Skills vs Other Approaches" 对比** |
+| 平台/工具型 | 命令演示 + 兼容性矩阵 | vercel-labs/skills、**daymade 每 skill 配 GIF demo 卡片** |
+| 安全/专业型 | Trophy Case + 动词描述 | trailofbits/skills、**code-audit 反幻觉方法论**、**claude-cybersecurity 8-agent 架构图** |
+| 科学/研究型 | 领域矩阵 + 多步骤工作流 | K-Dense 17 领域、**academic-research 4 skill 流水线**、**Stanford REAP 机构背书 + "自己验证"** |
