@@ -114,14 +114,25 @@ NOT: `from skill import analyze_jd; result = analyze_jd("job.pdf")`
 
 ## Universal Structure (all types)
 
-Use [templates/readme-skeleton.md](templates/readme-skeleton.md) as starting point. It includes the hero layout, badge row, section order, and type-specific comments. Fill in placeholders, delete sections that don't apply.
+Every README starts with the hero block from [templates/hero.md](templates/hero.md), then follows the type-specific template:
 
-The skeleton encodes the universal layer that all types share:
+| Type | Template |
+|------|----------|
+| 1 Output | [templates/type-1-output.md](templates/type-1-output.md) |
+| 2 Efficiency | [templates/type-2-efficiency.md](templates/type-2-efficiency.md) |
+| 3 Capability | [templates/type-3-capability.md](templates/type-3-capability.md) |
+| 4 Style | [templates/type-4-style.md](templates/type-4-style.md) |
+| 5 Collection | [templates/type-5-collection.md](templates/type-5-collection.md) |
+| 6 Platform | [templates/type-6-platform.md](templates/type-6-platform.md) |
+| 7 Security | [templates/type-7-security.md](templates/type-7-security.md) |
+| 8 Science | [templates/type-8-science.md](templates/type-8-science.md) |
+
+The hero block encodes the universal layer all types share:
 1. **Hero block** — centered title + optional brand quote + badge row + hero positioning sentence
 2. **Badge row** — version, license, Agent Skills, skills.sh, runtime compatibility. Add stars badge once repo has traction
 3. **Hero positioning** — 1-2 sentences following the rules in Step 2 (specific action chain, most differentiating capability first)
 
-Then proceed to the type card's Mandatory sections (Hook, Proof, etc.).
+Fill in template placeholders, delete sections that don't apply.
 
 ## 4 Writing Principles (from 35-sample research)
 
