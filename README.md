@@ -1,165 +1,145 @@
-# Skill README Writer
+<div align="center">
 
-**你的 Skill README 该有的都有：标题、简介、安装、用法。很完整。但还是没人装。**
+# 匾额 | Biane
 
-不是产品不行。是这套结构——「该有的都有」——是一份**说明书**。说明书回答「这是什么」。而真正让人 10 秒内点安装的，是**销售页**。
+> *「三个字的匾，定一家店的生死。十秒钟的 README，定一个 skill 的装机量。」*
 
-销售页回答的是另一个问题：「你凭什么不装。」——用截图砸脸，而不是文字描述功能。用 Before/After 对比，而不是「更快更好」。用生成文本让你自己感受风格，而不是形容词堆砌。
+[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Compatible-blue)](https://github.com/anthropics/skills)
+[![skills.sh](https://img.shields.io/badge/skills.sh-installable-brightgreen)](https://skills.sh)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-2.0-blue)]()
+[![Types](https://img.shields.io/badge/types-8-orange)]()
+[![Benchmarks](https://img.shields.io/badge/benchmarks-35-red)]()
 
-而不同类型的 Skill，凭什么不装的答案完全不同——产出型靠截图、提效型靠对比、风格型靠示例。市面上没人在讲这个区别。
+**读你的 SKILL.md，判断 8 种类型中的哪种，加载对应标杆手法和模板，交付一份让人 10 秒决定安装的 README。**
 
-这个 Skill 就讲这个。
+[看效果](#beforeafter) · [安装](#快速开始) · [怎么用](#对话示例) · [局限](#局限性)
+
+</div>
 
 ---
 
-## 装之前先看一眼：Agent 被这个 Skill 唤醒后会发生什么
+## 它解决什么问题
 
-```
-User: "帮我写 caveman-skill 的 README"
+你的 Skill README 该有的都有：标题、简介、安装、用法。很完整。但还是没人装。
 
-Agent: "让我理解一下你的 skill —— caveman 的核心改进
-      是'省掉 75% 废话但保留全部技术精度'。
-      这是提效型（Type 2），README 需要 Before/After 对比。
+- 你让 AI「帮我写个 README」，拿到的是 **Install / Usage / Contributing 三件套**——十年前开源项目的模板，不是 Agent Skill 的销售页
+- 你的 PPT 生成 skill 写了 200 字描述功能，**但没贴一张图**——读者不知道效果长什么样就走了
+- 你的提效 skill 说「大幅提升效率」，**但没有 Before/After 对比**——「大幅」是多少？读者没有锚点
 
-      我先确认：caveman 有触发退出机制吗？
-      —— 这对 README 的信任系统章节很重要。"
-
-User: "有。说 'stop caveman' 或 'normal mode' 就退出"
-
-Agent: "好。按 Type 2 策略，你的 README 结构：
-
-      1. 痛点钩子：'AI 回复总是先写 3 行客套话再给答案？'
-      2. Before/After：180 词 → 35 词，同一问题，两种回答
-      3. 安装：npx skills add caveman（首屏第 3 行）
-      4. 自动化退出：3 种触发场景
-      5. 限制：中文效果约 50-60%
-
-      现在开始写。你随时喊停。"
-
-（3 分钟后输出完整 README.md）
-```
-
-> 这不是预制模板。「先判断类型，再给对应策略」是这个 Skill 和所有通用 README 生成器的本质区别。它不会给你一个 Install/Usage/Contributing 三件套然后让你自己填——它会诊断、确认、选择策略、然后才动笔。
+**README 不是说明书。是匾额——路人扫一眼就决定进不进店。**
 
 ---
 
 ## Before/After
 
-| 维度 | 不用这个 Skill | 用这个 Skill |
-|------|--------------|-------------|
-| **类型识别** | 不知道 Skill 也分类型，一个模板套所有 | 8 种类型 + 每种有独立的策略和必选内容 |
-| **效果展示** | 文字描述功能（"可以生成 PPT"） | 按类型匹配：截图 / B&A 对比 / 模式清单 / 生成文本 |
-| **首屏钩子** | 项目名 + 一句话简介，然后陷入功能罗列 | 类型匹配的钩子（反问共情 / 故事叙事 / 风格锚点） |
-| **信任建立** | "欢迎 Star / PR / Issue" | 诚实边界 + 攻击锚点点名 + 量化证明 |
-| **差异化** | 没说和同类有什么不同 | 竞品对比表 + 攻击锚点（"别的工具给你润色。包公开堂——一条龙审完"） |
-| **参考基准** | 凭感觉写 | 35 个样本调研 + 每个类型的标杆 README 参考 |
+用匾额 v2.0 重写 [baogong-skill](https://github.com/dmlin7777777/baogong-skill) 的 README，实测对比：
 
-**具体来说：**
+| 维度 | 重写前 | 匾额重写后 |
+|:----:|:------:|:-----:|
+| **首屏** | 品牌 slogan + 安装命令在第 100 行 | 痛点钩子 + B/A 对比 + 安装，首屏解决「要不要装」 |
+| **效果展示** | 一个对话示例淹没在文字中 | 6 维 Before/After 对比表前置，一目了然 |
+| **信任系统** | 铡刀门混在工作原理里 | 独立安全边界章节 + 三层安全机制表 |
+| **品牌一致性** | AI 自动生成功能总结，原始品牌声音丢失 | 模板引导保留「卷宗未到，不开堂」原始品牌声音 |
+| **流程展示** | 纯文字描述四阶段 | 「堂审四幕」表格 + 态度列（Luban 手法） |
+| **产出物** | 交付物 bullet 列表 | 交付物 + 截图占位（Writing Principle 5） |
 
-```
-# Before — 不用 skill-readme-writer
-一个 PPT 生成 Skill 的 README：
-  "本项目可以生成精美的 HTML 演示文稿。支持多种版式。"
-  → 没有一张图。没有一句对话示例。读者不知道长什么样。
-
-# After — 用了 skill-readme-writer  
-识别为「作品产出型」→ 策略：截图主导
-  首屏 60% 面积是效果截图 + 风格变体微缩预览
-  + "30 秒开始"段（安装命令 + 一句发给 Agent 的话）
-  → 读者不用读文字，看图就知道要不要装
-```
+> 完整产出见 [baogong-skill README](https://github.com/dmlin7777777/baogong-skill)
 
 ---
 
-## 产出示例：baogong-skill README 重写
+## 它会交付什么
 
-用 Type 2（提效型）策略重写了 [baogong-skill](https://github.com/dmlin7777777/baogong-skill) 的 README：
+- **完整 README.md** — 按 8 种类型匹配不同结构和证明方式，不是一个模板套所有
+- **类型诊断** — 告诉你的 skill 属于哪种类型、该用什么证明方式（用你听得懂的话，不问「是不是 Type 3」）
+- **跨引用审查** — 每个 README 声明必须追溯到 SKILL.md，追不到就删。不编数字、不夸大能力
 
-| 维度 | 原 README | Type 2 策略重写后 |
-|------|----------|-----------------|
-| **首屏钩子** | "卷宗未到，不开堂。"（品牌叙事，纯 slogan） | "AI 帮你写简历，你敢直接交吗？"（攻击用户信任焦虑） |
-| **安装命令位置** | 在 100 行之后（四幕表格 + 效果示例之后） | **首屏第 3 行**，badge 下方立刻出现 |
-| **效果证明** | 一个示例对话 + 一个 diff（有力但淹没在文字中） | Before → After 对比前置为独立章节，数字标注信息来源 |
-| **信任系统** | 铡刀门 5 条 + 三色签 | 铡刀门 4 条精炼 + 三色签面试可信度（"你答得出来 / 你答不出来"） |
-| **安全边界** | 混在工作原理中 | 独立章节「包公不做的事」—— 6 条硬承诺 |
-
-[查看完整示例 →](examples/baogong-readme-type2.md)
-
-> 核心差异：原 README 很强，但它假设读者有耐心读完全文。Type 2 策略做的是：让读者在 3 秒内看到「凭什么装」——不靠读完，靠扫读。
+<!-- TODO: 视觉素材 — 用 huashu-design 截一张匾额产出的 README 效果图 -->
 
 ---
 
-## 安装
+## 快速开始
 
 ```bash
-# 本地 skill 目录（已在 ~/.workbuddy/skills/ 下）
-# 无需额外安装，触发词即可激活
+npx skills add dmlin7777777/biane
+```
 
-# 触发方式（把这句话发给 Agent）
-"用 skill-readme-writer 帮我写 [skill-name] 的 README"
-"review 一下这个 README"
-"我的 skill 是提效型的，怎么写 README"
+> 安装后对 Agent 说：「帮我写 [skill-name] 的 README」
+
+<details>
+<summary>其他安装方式</summary>
+
+```bash
+git clone https://github.com/dmlin7777777/biane.git ~/.claude/skills/skill-readme-writer
+```
+
+</details>
+
+---
+
+## 对话示例
+
+```
+User: "帮我写 caveman-skill 的 README"
+
+Agent: "让我看看 caveman 的 SKILL.md...
+       核心改进是'省掉 75% 废话但保留全部技术精度'。
+       这是提效型（Type 2），README 需要 Before/After 对比。
+
+       🔴 CP1 — 类型确认：
+       caveman 的读者首先想知道'比普通回复好多少'，
+       不是'能产出什么'。所以用 Type 2 策略。对吗？"
+
+User: "对"
+
+Agent: "🔴 CP2 — ONE proof + hero 定位：
+       ONE proof: 同一问题，普通回复 180 词 vs caveman 35 词
+       Hero: '砍掉 AI 回复里 75% 的客套话，只留技术精度。'
+       → 这两个方向对吗？"
+
+User: "对，开写"
+
+（3 分钟后输出完整 README.md，含 B/A 对比表 + 安全边界 + 品牌隐喻）
 ```
 
 ---
 
-## 它怎么工作
+## 题匾三步
 
-启动后走三步：
+| 步骤 | 做什么 | 一句狠话 |
+|------|--------|---------|
+| **验明正身** | 读 SKILL.md，判断 8 种类型，用你听得懂的话确认 | 不问你「是不是 Type 3」——你不需要懂分类法，你只需要确认你的 skill 干了什么 |
+| **选匾题字** | 找到 ONE proof + 定位句。一个元素做 80% 的说服 | 十个功能平均用力 = 一个都记不住。找到那一个砸脸的 |
+| **挂匾验收** | 按模板写全稿，跨引用审查，逐节确认 | README 里的每句话必须追溯到 SKILL.md。追不到就删 |
 
-| 步骤 | 做什么 | 输出 |
-|------|--------|------|
-| **1. 类型识别** | 根据 Skill 的功能判断 8 种类型中的哪一种（用你听得懂的话说，不问你"是不是 Type 3"） | 类型标签 + 对应策略 |
-| **2. 策略分发** | 加载该类型的必选内容清单 + 标杆 README 参考 | 结构化 README 提纲 |
-| **3. 写作执行** | 按 8 条铁律 + 反模式检查 + 标杆对标来写。每写完一个大节停一下让你确认 | 完整的 README.md |
+### 三道检查点
 
----
+每步结束都有强制停车点（🔴 CP），等你确认后才继续：
 
-## 8 种类型 — 决策流
-
-```
-你问：这个 Skill 让人看到什么才愿意装？
-
-"看它能产出什么"              → Type 1  作品产出型  → 截图/GIF/对话示例主导
-"看它比我现在的方法好多少"     → Type 2  提效/流程型  → Before/After 对比主导
-"看它给 Agent 加了什么能力"    → Type 3  能力增强型  → 模式清单 + 覆盖矩阵
-"听它说话是什么感觉"           → Type 4  风格/视角型  → 3 段生成文本对比
-
-"看有什么 Skill 可以选"        → Type 5  合集/目录型  → 质量标准 + 分类列表
-"看怎么管理/安装 Skill"        → Type 6  平台/工具型  → 一行命令上手
-"看在关键场景能不能信任"       → Type 7  安全/专业型  → 战绩墙 + 动词驱动描述
-"看能解锁什么复杂工作流"       → Type 8  科学/研究型  → 完整多步骤工作流
-```
-
-8 种类型 × 8 项铁律速查表已内置在 SKILL.md 中。
-
-| 类型 | 标杆 Skill | 学什么 |
-|------|-----------|--------|
-| **产出型** | `guizang-ppt-skill` `nuwa-skill` `cailun-skill` | 截图主导首屏 / 故事叙事钩子 / 命名仪式感 |
-| **提效型** | `baogong-skill` `luban-skill` `karpathy-skills` | Before/After 对比 / 数字轰炸 / 极简规则映射（176K⭐ 验证） |
-| **能力型** | `humanizer` `code-review-skill` `addyosmani/agent-skills` | 模式清单 / 四阶段流程 + 严重性颜色编码 / 生命周期组织 |
-| **风格型** | `nuwa-skill` `colleague-skill` | 生成文本对比 / 情感钩子 |
-| **合集型** | `awesome-cursorrules` `alirezarezvani/claude-skills` `travisvn/awesome` | 13 大类索引 / 跨平台兼容矩阵 / Skills vs Other 对比 |
-| **平台型** | `vercel-labs/skills` `daymade/claude-code-skills` | `npx` 一键上手 / marketplace-as-README（每 skill 配 GIF） |
-| **安全型** | `trailofbits/skills` `code-audit` `claude-code-owasp` | 战绩墙 / 反幻觉方法论 / OWASP 标准覆盖矩阵 |
-| **科学型** | `academic-research-skills` `K-Dense-AI` `Stanford REAP` | 4 skill 流水线 / 领域矩阵 / 机构背书 + "自己验证" |
-
-> 全部 35 样本的详细分析见 [references/research-data.md](references/research-data.md)。
+| CP | 卡什么 | 为什么卡 |
+|----|--------|---------|
+| **CP1** | 类型判断 | 类型错了整个 README 结构就错 |
+| **CP2** | ONE proof + hero 定位句 | 这是最关键的决策——proof 错了全篇方向错，定位句抽象了用户一定要返工 |
+| **CP3** | 全稿 + 跨引用审查 | Agent 天然倾向「圆」出更完整的能力——这道检查拦的就是这个 |
 
 ---
 
-## 8 条通用铁律
+## 8 种类型
 
-不管你是什么类型，以下 8 条没有例外：
+```
+读者首先想知道...
 
-1. **首屏 10 秒内回答「要不要装」** — 钩子 + 效果证明 + 安装命令必须在第一屏
-2. **安装命令必须在首屏滚动范围内** — 读者不能翻页才能装
-3. **对话示例 > 代码示例** — 人要知道「跟 Agent 说什么」，不是「代码怎么跑」
-4. **效果展示形式由类型决定** — 不要用截图证明提效，不要用文字描述产出
-5. **诚实 > 吹嘘** — 每个标杆 README 都有 Limitations 章节
-6. **攻击锚点必须点名** — 「比传统做法更好」没用。「点名批评 AI 空泛形容词堆砌」有用
-7. **徽章矩阵是最便宜的社会认同** — License + skills.sh 状态 + GitHub stars 是最低配置
-8. **情感连接打开逻辑关不上的门** — 功能列表说「它做什么」，起源故事说「你为什么造它」——后者才让人在意
+  "它能产出什么？给我看"          → Type 1  产出型   → 截图/GIF 主导
+  "比我现在的方法好多少？"        → Type 2  提效型   → Before/After 对比
+  "给 Agent 加了什么能力？"       → Type 3  能力型   → 模式清单 + 覆盖矩阵
+  "说话什么感觉？让我听听"        → Type 4  风格型   → 同一 prompt 两种输出对比
+  "有什么 skill 可以选？"         → Type 5  合集型   → 分类目录 + 质量标准
+  "怎么管理/安装 skill？"         → Type 6  平台型   → 一行命令上手
+  "关键场景能不能信任它？"        → Type 7  安全型   → 战绩墙 + 标准覆盖
+  "能解锁什么复杂工作流？"        → Type 8  科学型   → 完整端到端流水线
+```
+
+每种类型有独立模板，编入了该类型标杆 README 的核心手法（不是通用占位符）。
 
 ---
 
@@ -167,72 +147,90 @@ Agent: "好。按 Type 2 策略，你的 README 结构：
 
 | 指标 | 数据 |
 |------|------|
-| 调研样本 | 35 个 Skill 仓库/单品 |
-| 覆盖类型 | 8 种（产出 / 提效 / 能力 / 风格 / 合集 / 平台 / 安全 / 科学） |
-| 测试用例 | 7 个（4 类型判断 + 3 写作质量） |
-| 实测通过率 | **7/7 = 100%**（含边界歧义和无法归类两个压力 case） |
-| 文档规模 | SKILL.md 550 行 + test-prompts.json + examples/ + references/ |
-| 跨类型速查表 | 8 类型 × 7 必选项 = 56 格完整覆盖 |
-| 失败模式 | 3 种失败场景 + 全局 fallback（2 轮兜底 → 保守型 README） |
-
-> *实测数据截至 2026-06-15。测试覆盖了 Output / Efficiency / Style 三种类型的完整 README 写作，以及边界歧义和无法归类的 fallback 行为。详细报告见 [test-output/test-report.md](test-output/test-report.md)。*
-
----
-
-## 和同类有什么不同
-
-| 维度 | 传统 README 模板 | 市面上 README skill | Skill README Writer |
-|------|-----------------|-------------------|-------------------|
-| 对象 | 开源项目 | 开源项目 | **Agent Skill 专属** |
-| 结构 | Install / Usage / Contributing | 同上，稍作变体 | 按 8 种类型分发不同结构 |
-| 效果展示 | 无 | 无 | **按类型匹配**（截图/B&A/模式清单/文本对比） |
-| 用户语言 | 假设英文 | 英文为主 | 中文 + 英文双轨（调研覆盖南北两派） |
-| 信任系统 | Star / License | 无 | 诚实边界 + 攻击锚点 + 量化证明 |
-| 决策支持 | 无 | 无 | 8 种类型识别决策流 + 标杆对标 |
-| 失败处理 | 无 | 无 | 3 种失败模式 + fallback（类型不明先问，再不明兜底） |
-
-大部分 README skill 的模板是十年前的，对象是传统开源项目，没考虑「Agent Skill」这个品类。也没考虑「AI Agent 也是 README 的读者」。这个 Skill 从调研到结构都只为一件事：**给 Skill 写 README**。
+| 调研样本 | **35 个** Skill 仓库（Anthropic / Vercel / trailofbits / K-Dense / Stanford 等） |
+| 类型模板 | **8 套**，每套编入 2-3 个标杆的手法（Luban 态度列、Cailun 叙事痛点、Humanizer B/A 表...） |
+| 写作原则 | **5 条**（从 35 样本统计 + baogong 实验中提炼） |
+| 铁律 | **8 条**通用铁律，跨类型无例外 |
+| Darwin 评分 | **91.7 / 100**（8 维度：前置声明 / 工作流 / 边界 / 检查点 / 指令 / 资源集成 / 架构 / 实测） |
+| 实验验证 | baogong-skill README 从零产出，hero 定位 1 轮通过（v1.0 需要 3 轮） |
 
 ---
 
 ## 安全边界
 
-**做什么：**
-- 识别你的 Skill 属于哪种类型
-- 告诉你该类型的 README 应该有哪些章节、什么顺序、怎么展示效果
-- 对标该类型的标杆 README，告诉你「他们是怎么做的」
-- 检查你的 README 是否违反通用铁律或类型专属反模式
-
-**不做什么：**
-- 不替你决定审美风格（古文派 vs 极简派，你自己选）
-- 不生成虚构的安装量、用户数、性能数据
-- 不保证「照做就爆」—— README 只是销售页，产品本身才是产品
-- 不给合集型 Skill 写单品 README（反过来也不行——类型边界不混淆）
-
-**强制停手点：** 如果你说「随便写一个」，这个 Skill 会停下来问类型。不猜。
+- **会做：** 判断类型、选择策略、按模板写 README、跨引用审查确保每句话追溯到 SKILL.md
+- **不会做：** 编造安装量 / 用户数 / 性能数据；替你决定审美风格（古文派 vs 极简派你自己选）
+- **强制停手点：** 你说「随便写一个」→ 停下来问类型，不猜
 
 ---
 
-## 限制
+## 局限性
 
-- **Skill 尚新**（2026-06 创建），实战战绩中的"35 样本 / 550 行 / 7/7 pass"是结构性指标和测试数据，非大规模外部用户使用数据
-- Type 5-8（合集 / 平台 / 安全 / 科学）的样本量相对少（每类 1-3 个），策略覆盖率低于 Type 1-4
-- 无法自动截图——对于 Output 型 Skill，如果用户没有提供截图，Agent 会使用视觉锚点描述替代（效果不如真实截图）
-
----
-
-## 致谢
-
-这个 Skill 的方法论建立在以下仓库的 README 分析之上：
-
-**提效型标杆** — [baogong-skill](https://github.com/dmlin7777777/baogong-skill)（铡刀门 + Before/After）、[luban-skill](https://github.com/LearnPrompt/luban-skill)（数字轰炸 + 反问共情）、[paoding-skill](https://github.com/LearnPrompt/paoding-skill)（痛点场景 + 对称句式）
-
-**产出型标杆** — [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)（截图主导 + 30 秒开始）、[nuwa-skill](https://github.com/alchaincyf/nuwa-skill)（故事叙事 + 诚实边界）、[cailun-skill](https://github.com/LearnPrompt/cailun-skill)（七纸展示 + 命名仪式）
-
-**生态调研** — 35 个样本覆盖 Anthropic / Vercel / ComposioHQ / VoltAgent / trailofbits / K-Dense-AI / Stanford REAP / PatrickJS 等仓库
+- **Type 5-8 样本少** — 每类 1-3 个标杆，策略覆盖率低于 Type 1-4。冷门类型可能需要你补充标杆参考
+- **无法自动截图** — Output 型 skill 如果你没提供截图，只能用文字占位符替代，效果打折
+- **品牌隐喻靠你** — 匾额能保护已有的品牌声音（模板有正反例引导），但不会凭空发明一个。没有自然隐喻时走 karpathy 极简路线
 
 ---
 
-## License
+## 为什么叫匾额
 
-MIT
+写 Skill 的人通常不写 README。写了也是功能列表 + 安装命令——像一家好店挂了块白底黑字的门牌。
+
+但老店的匾额从来不是自己随便写的。好匾请大师题，三个字定调性——路人远远看一眼就知道这家店值不值得进。
+
+匾额做的事一样：你给 SKILL.md，它看你是什么店，选对的题法，交一块让人 10 秒决定进门的匾。
+
+---
+
+<details>
+<summary><strong>开发文档</strong></summary>
+
+### 文件结构
+
+```
+biane/
+├── SKILL.md                    # Agent 指令（v2.0，~400 行）
+├── templates/
+│   ├── hero.md                 # 通用 hero 区块
+│   ├── type-1-output.md        # 作品产出型模板
+│   ├── type-2-efficiency.md    # 提效/流程型模板
+│   ├── type-3-capability.md    # 能力增强型模板
+│   ├── type-4-style.md         # 风格/视角型模板
+│   ├── type-5-collection.md    # 合集/目录型模板
+│   ├── type-6-platform.md      # 平台/工具型模板
+│   ├── type-7-security.md      # 安全/专业型模板
+│   └── type-8-science.md       # 科学/研究型模板
+├── references/
+│   ├── research-data.md        # 35 样本调研数据
+│   └── visual-toolkit.md       # 视觉素材制作指南
+├── evals/                      # 评估用例
+├── examples/                   # 产出示例
+└── test-output/                # 测试报告
+```
+
+### 标杆对照表
+
+| 类型 | 标杆 | 学什么 |
+|------|------|--------|
+| 产出 | guizang · nuwa · cailun | 截图主导 · 故事叙事 · 命名仪式 |
+| 提效 | luban · paoding · karpathy | 数字轰炸 · 对称句式 · 极简映射（176K⭐） |
+| 能力 | humanizer · code-review · addyosmani | 模式清单 · 严重性编码 · 生命周期 |
+| 风格 | nuwa · colleague | 多视角对比 · 情感钩子 |
+| 合集 | awesome-cursorrules · alirezarezvani · travisvn | 13 类索引 · 兼容矩阵 · Skills vs Others |
+| 平台 | vercel-labs · daymade | npx 一键 · GIF 卡片 |
+| 安全 | trailofbits · code-audit · owasp | 战绩墙 · 反幻觉 · 标准矩阵 |
+| 科学 | academic-research · K-Dense · Stanford REAP | 流水线 · 领域矩阵 · 机构背书 |
+
+### 方法论来源
+
+35 样本调研覆盖 Anthropic / Vercel / ComposioHQ / VoltAgent / trailofbits / K-Dense-AI / Stanford REAP / PatrickJS 等仓库。详细分析见 [references/research-data.md](references/research-data.md)。
+
+</details>
+
+---
+
+<div align="center">
+
+MIT License
+
+</div>
